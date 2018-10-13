@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls.Dialogs;
+﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,9 @@ namespace AirNewUI
     {
         public MainWindow()
         {
+            AirEntities dbContext = new AirEntities();
             InitializeComponent();
+            MetroDataGrid.ItemsSource = dbContext.Members.ToList();
         }
 
 
@@ -69,6 +72,19 @@ namespace AirNewUI
             else
             {
                 //MessageDialogResult messageResult = await this.ShowMessageAsync("Authentication Information", String.Format("Username: {0}\nPassword: {1}\nShouldRemember: {2}", result.Username, result.Password, result.ShouldRemember));
+            }
+        }
+
+        private void HamburgerMenu_OnItemClick(object sender, ItemClickEventArgs e)
+        {
+            // instead using binding Content="{Binding RelativeSource={RelativeSource Self}, Mode=OneWay, Path=SelectedItem}"
+            // we can do this
+            HamburgerMenuControl.Content = e.ClickedItem;
+
+            // close the menu if a item was selected
+            if (this.HamburgerMenuControl.IsPaneOpen)
+            {
+                this.HamburgerMenuControl.IsPaneOpen = false;
             }
         }
     }
