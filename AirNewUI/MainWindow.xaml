@@ -5,11 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:AirNewUI"
+                      
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="76,70,0,0"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="83,159,0,0"/>
 
+    <Controls:MetroWindow.Resources>
+        <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
+    </Controls:MetroWindow.Resources>
+
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="MessageBox" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" BorderBrush="{x:Null}" Click="Button_Click" Controls:ControlsHelper.ContentCharacterCasing="Normal"/>
+            <Button Content="ConfirmBox" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="104" Click="Button_Click_1" Controls:ControlsHelper.ContentCharacterCasing="Normal"/>
+            <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+            <RadioButton Margin="{StaticResource ControlMargin}"
+                         Content="E_nabled"
+                         GroupName="1" />
+            <RadioButton Margin="{StaticResource ControlMargin}"
+                         Content="Enabled"
+                         GroupName="1"
+                         IsChecked="True" />
+            <!--watermark-->
+            <TextBox Margin="{StaticResource ControlMargin}"
+                         HorizontalContentAlignment="Stretch"
+                         Controls:TextBoxHelper.ClearTextButton="True"
+                         Controls:TextBoxHelper.IsWaitingForData="True"
+                         Controls:TextBoxHelper.UseFloatingWatermark="True"
+                         Controls:TextBoxHelper.Watermark="Watermark"
+                         Controls:TextBoxHelper.WatermarkAlignment="Left"
+                         SpellCheck.IsEnabled="True"
+                         ToolTip="Default alignment">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Custom Item" />
+                        <Separator />
+                        <MenuItem Command="ApplicationCommands.Cut" Style="{DynamicResource MetroMenuItem}" />
+                        <MenuItem Command="ApplicationCommands.Copy" Style="{DynamicResource MetroMenuItem}" />
+                        <MenuItem Command="ApplicationCommands.Paste" Style="{DynamicResource MetroMenuItem}" />
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+
+
+            <!--passwordbox-->
+            <PasswordBox Margin="{StaticResource ControlMargin}"
+                             Controls:TextBoxHelper.ClearTextButton="True"
+                             Controls:TextBoxHelper.UseFloatingWatermark="True"
+                             Controls:TextBoxHelper.Watermark="Watermark"
+                             Controls:TextBoxHelper.WatermarkAlignment="Right" 
+                             Style="{StaticResource Win8MetroPasswordBox}"
+                         />
+            <Button Content="LoginDialog" Width="120" Click="Button_Click_3"/>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>

@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:AirNewUI"
         mc:Ignorable="d"
         Title="LogIn" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Opacity="0.8">
+        <Grid.Background>
+            <ImageBrush ImageSource="images/Background.jpg"/>
+        </Grid.Background>
     </Grid>
 </Window>
