@@ -25,30 +25,45 @@ namespace AirNewUI
             InitializeComponent();
         }
 
+        AirEntities dbContext = new AirEntities();
+
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            LoginDialogData result = await this.ShowLoginAsync("Login", "Enter your password", new LoginDialogSettings
+            bool loginSuccess = false;
+            while (!loginSuccess)
             {
-                ColorScheme = this.MetroDialogOptions.ColorScheme,
-                RememberCheckBoxVisibility = Visibility.Visible,
-                EnablePasswordPreview = true,
-                //UsernameWatermark = "aaa"
-            });
-            if (result == null)
-            {
-                // User pressed cancel
-            }
-            else
-            {
-                //MessageDialogResult messageResult = await this.ShowMessageAsync("Authentication Information", String.Format("Username: {0}\nPassword: {1}\nShouldRemember: {2}", result.Username, result.Password, result.ShouldRemember));
+                LoginDialogData result = await this.ShowLoginAsync("Login", "Enter your password",
+                   new LoginDialogSettings
+                   {
+                       ColorScheme = this.MetroDialogOptions.ColorScheme,
+                       RememberCheckBoxVisibility = Visibility.Visible,
+                       EnablePasswordPreview = true,
+                       //UsernameWatermark = "aaa"
+                   });
+
+                if (result == null)
+                {
+                    MessageBox.Show("請輸入帳號密碼");
+                    continue;
+                }
+                else
+                {
+                    var res = dbContext.Members.AsEnumerable().FirstOrDefault(x =>
+                                x.Member_Account == result.Username && 
+                                x.Member_Password == result.Password);
+
+                    if (res != null)
+                    {
+                        MessageBox.Show("登入成功");
+                        loginSuccess = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("帳號或密碼不正確");
+                    }
+                }
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            MainWindow window = new MainWindow();
-            window.Show();
-        }
     }
 }
