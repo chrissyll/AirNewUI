@@ -35,8 +35,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,10 +73,103 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Airline.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Airplain.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirplainCabinDetail.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Airport.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Area.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="booking.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cabin.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="car.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarImage.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="category.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Commerical.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryCityAirport.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customer.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Flight.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlightSeat.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPhoto.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberViewDetail.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Passenger.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPhoto.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AirModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirModel1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -86,6 +197,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="AirModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AirModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AirModel1.edmx.diagram">
+      <DependentUpon>AirModel1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +212,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AirModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AirModel1.Context.cs</LastGenOutput>
+      <DependentUpon>AirModel1.edmx</DependentUpon>
+    </Content>
+    <Content Include="AirModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AirModel1.edmx</DependentUpon>
+      <LastGenOutput>AirModel1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
