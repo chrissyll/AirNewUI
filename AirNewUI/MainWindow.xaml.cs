@@ -28,7 +28,7 @@ namespace AirTicket
             InitializeComponent();
             this.BorderThickness = new Thickness(0);
             ThemeManager.ChangeAppStyle(this,
-                ThemeManager.GetAccent("Crimson"),
+                ThemeManager.GetAccent("Steel"),
                 ThemeManager.GetAppTheme("BaseLight"));
 
             txbLoginEntity.Text = "Chrissy";

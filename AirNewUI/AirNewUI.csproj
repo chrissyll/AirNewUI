@@ -181,6 +181,9 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TabViews\會員管理.xaml.cs">
+      <DependentUpon>會員管理.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
@@ -229,6 +232,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TabViews\會員管理.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -275,6 +282,31 @@
       <DependentUpon>AirModel1.edmx</DependentUpon>
       <LastGenOutput>AirModel1.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\facebook.png" />
+    <Resource Include="images\google-plus.png" />
+    <Resource Include="images\howcast.png" />
+    <Resource Include="images\icons8-add-480.png" />
+    <Resource Include="images\icons8-air-480.png" />
+    <Resource Include="images\icons8-cad-480.png" />
+    <Resource Include="images\icons8-group-480.png" />
+    <Resource Include="images\icons8-user-512.png" />
+    <Resource Include="images\list.png" />
+    <Resource Include="images\London-1.jpg" />
+    <Resource Include="images\mastercard %281%29.png" />
+    <Resource Include="images\mastercard.png" />
+    <Resource Include="images\Paris-cover.jpg" />
+    <Resource Include="images\Pariscover2.jpg" />
+    <Resource Include="images\sky.jpg" />
+    <Resource Include="images\user.png" />
+    <Resource Include="images\useradd.png" />
+    <Resource Include="images\visa %281%29.png" />
+    <Resource Include="images\visa.png" />
+    <Resource Include="images\15462.jpg" />
+    <Resource Include="images\3132.jpg" />
+    <Resource Include="images\602.jpg" />
+    <Resource Include="images\airplane %281%29.png" />
+    <Resource Include="images\amex.png" />
+    <Resource Include="images\BackGround3.jpg" />
     <Resource Include="Air_Ticket.ico" />
     <Resource Include="images\Avatar1.png" />
     <Resource Include="images\BackGround2.jpg" />

@@ -13,7 +13,7 @@
         NonActiveGlowBrush="#CDFF0000"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
-        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Opacity="0.96" Closed="MetroWindow_Closed" IconScalingMode="NoScaleSmallerFrame" ShowIconOnTitleBar="False">
+        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Opacity="0.945" Closed="MetroWindow_Closed" IconScalingMode="NoScaleSmallerFrame" ShowIconOnTitleBar="False">
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -162,7 +162,7 @@
     </Controls:MetroWindow.Resources>
 
     <Controls:MetroWindow.Background>
-        <ImageBrush ImageSource="images/BackGround2.jpg" Stretch="UniformToFill" Opacity="0.9"/>
+        <ImageBrush ImageSource="images/BackGround3.jpg" Stretch="UniformToFill" Opacity="0.9"/>
     </Controls:MetroWindow.Background>
 
     <Controls:MetroWindow.RightWindowCommands>
@@ -215,9 +215,9 @@
                 <!--  Items  -->
                 <Controls:HamburgerMenu.ItemsSource>
                     <Controls:HamburgerMenuItemCollection>
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Home}" Label="Home">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountBox}" Label="會員管理">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <TabViews:LoginUserControl />
+                                <local:會員管理 />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountCircle}" Label="Private">

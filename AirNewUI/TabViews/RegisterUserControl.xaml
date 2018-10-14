@@ -23,6 +23,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <TextBox Margin="20 30 10 10" Padding="5"
+                         x:Name="email_txt"
                         HorizontalContentAlignment="Stretch"
                         Controls:TextBoxHelper.ClearTextButton="True"
                         Controls:TextBoxHelper.UseFloatingWatermark="True"
@@ -30,25 +31,28 @@
                         Controls:TextBoxHelper.WatermarkAlignment="Left"
                         FontSize="14" FontWeight="DemiBold"
                         ToolTip="請輸入帳號"/>
-                <ComboBox Margin="20 10 10 0" Padding="5"
+                <TextBox x:Name="firstname_txt" Margin="20 10 10 10" Padding="5"
+                        HorizontalContentAlignment="Stretch"
+                        Controls:TextBoxHelper.ClearTextButton="True"
+                        Controls:TextBoxHelper.UseFloatingWatermark="True"
+                        Controls:TextBoxHelper.Watermark="First Name"
+                        Controls:TextBoxHelper.WatermarkAlignment="Left"
+                        FontSize="14" FontWeight="DemiBold"
+                        />
+                <ComboBox Margin="20 10 10 0" Padding="8"
+                          x:Name="GenderCombo"
                           HorizontalContentAlignment="Stretch"
                           Controls:TextBoxHelper.UseFloatingWatermark="True"
                           Controls:TextBoxHelper.Watermark="Gender"
                           FontSize="14" FontWeight="DemiBold"
                           Controls:TextBoxHelper.ClearTextButton="True"
                           >
-                    <ComboBox.ContextMenu>
-                        <ContextMenu>
-                            <MenuItem Header="Test" />
-                        </ContextMenu>
-                    </ComboBox.ContextMenu>
-                    <ComboBoxItem Content="Item 1" />
-                    <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Mr." />
+                    <ComboBoxItem Content="Ms." />
                 </ComboBox>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <PasswordBox Margin="10 30 20 10" Padding="5 5 5 0"
+                <PasswordBox x:Name="password_txt" Margin="10 30 20 10" Padding="5 5 5 0"
                             Controls:TextBoxHelper.ClearTextButton="{Binding RelativeSource={RelativeSource Self}, Path=(Controls:TextBoxHelper.HasText), Mode=OneWay}"
                             Controls:TextBoxHelper.UseFloatingWatermark="True"
                             Controls:TextBoxHelper.Watermark="Password"
@@ -56,8 +60,27 @@
                          FontSize="14" FontWeight="DemiBold"
                          Style="{StaticResource MetroButtonRevealedPasswordBox}" 
                          ToolTip="請輸入密碼"/>
+                <TextBox x:Name="lastname_txt" Margin="10 10 20 10" Padding="5"
+                        HorizontalContentAlignment="Stretch"
+                        Controls:TextBoxHelper.ClearTextButton="True"
+                        Controls:TextBoxHelper.UseFloatingWatermark="True"
+                        Controls:TextBoxHelper.Watermark="Last Name"
+                        Controls:TextBoxHelper.WatermarkAlignment="Left"
+                        FontSize="14" FontWeight="DemiBold"
+                        />
+                <TextBox Margin="10 10 20 10" Padding="5"
+                        x:Name="phone_txt"
+                        PreviewTextInput="phone_txt_PreviewTextInput"
+                        HorizontalContentAlignment="Stretch"
+                        Controls:TextBoxHelper.ClearTextButton="True"
+                        Controls:TextBoxHelper.UseFloatingWatermark="True"
+                        Controls:TextBoxHelper.Watermark="Mobile Number"
+                        Controls:TextBoxHelper.WatermarkAlignment="Left"
+                        FontSize="14" FontWeight="DemiBold"
+                        />
+
                 <Label Margin="0 10 0 0" Name="ErrorMessage" HorizontalAlignment="Center" Content="" FontFamily="Calibri" Foreground="Red" ></Label>
-                <Button Name="LoginButton" Margin="20 10 20 0" Style="{StaticResource AccentedSquareButtonStyle}" Click="LoginButton_Click">
+                <Button Name="RegisterBtn" Margin="20 10 20 0" Style="{StaticResource AccentedSquareButtonStyle}" Click="RegisterBtn_Click">
                     <StackPanel Orientation="Horizontal">
                         <iconPacks:PackIconFontAwesome Margin="10 0 0 0" Kind="UserAltSolid" Width="15" Height="15"  VerticalAlignment="Center" />
                         <TextBlock Text="Register" Margin="5 0 30 0" VerticalAlignment="Center" FontSize="15"></TextBlock>
