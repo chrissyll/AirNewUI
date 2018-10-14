@@ -14,6 +14,7 @@
         Title="LogIn" Height="450" Width="700" Loaded="Window_Loaded" WindowStyle="None" Opacity="0.9" Visibility="Visible" MouseDown="MetroWindow_MouseDown" AllowsTransparency="True">
     <Controls:MetroWindow.Resources>
         <sys:Double x:Key="FloatingWatermarkFontSize">14</sys:Double>
+        <sys:Double x:Key="WindowTitleFontSize">16</sys:Double>
     </Controls:MetroWindow.Resources>
     <Grid>
         <Controls:MetroAnimatedTabControl  Name="Tabs" Controls:TabControlHelper.Underlined="SelectedTabItem" TabStripPlacement="Top" >

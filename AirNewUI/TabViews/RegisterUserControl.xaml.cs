@@ -44,7 +44,6 @@ namespace AirNewUI.TabViews
 
             await Task.Delay(2000);
             await controller.CloseAsync();
-            window.Hide();
         }
 
         private void LoginTab_Click(object sender, RoutedEventArgs e)

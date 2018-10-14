@@ -50,6 +50,12 @@
     <Reference Include="MahApps.Metro.IconPacks, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.2.3.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.1.1101, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.4.1.1101\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -151,10 +157,10 @@
     <Compile Include="MainWindow_Lab.xaml.cs">
       <DependentUpon>MainWindow_Lab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\RegisterUserControl.xaml.cs">
+    <Compile Include="TabViews\RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LoginUserControl.xaml.cs">
+    <Compile Include="TabViews\LoginUserControl.xaml.cs">
       <DependentUpon>LoginUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
@@ -189,11 +195,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\RegisterUserControl.xaml">
+    <Page Include="Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\LoginUserControl.xaml">
+    <Page Include="TabViews\RegisterUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\LoginUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -265,6 +275,8 @@
       <DependentUpon>AirModel1.edmx</DependentUpon>
       <LastGenOutput>AirModel1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Air_Ticket.ico" />
+    <Resource Include="images\Avatar1.png" />
     <Resource Include="images\BackGround2.jpg" />
     <Resource Include="images\Background.jpg" />
   </ItemGroup>

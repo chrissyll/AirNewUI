@@ -50,5 +50,12 @@ namespace AirNewUI.TabViews
         {
             ((LogInWindow)window).Tabs.SelectedIndex = 1;
         }
+
+        private void Demo1_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            window.Hide();
+        }
     }
 }
