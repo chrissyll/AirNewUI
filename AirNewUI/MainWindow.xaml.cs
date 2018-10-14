@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AirNewUI
+namespace AirTicket
 {
     /// <summary>
     /// MainWindow.xaml 的互動邏輯

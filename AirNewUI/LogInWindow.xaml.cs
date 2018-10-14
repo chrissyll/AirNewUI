@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AirNewUI
+namespace AirTicket
 {
     /// <summary>
     /// LogIn.xaml 的互動邏輯

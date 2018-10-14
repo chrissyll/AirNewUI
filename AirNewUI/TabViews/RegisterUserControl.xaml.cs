@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AirNewUI.TabViews
+namespace AirTicket.TabViews
 {
     /// <summary>
     /// Interaction logic for LoginUserControl.xaml
