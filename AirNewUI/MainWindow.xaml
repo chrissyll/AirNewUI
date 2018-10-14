@@ -13,7 +13,7 @@
         NonActiveGlowBrush="#CDFF0000"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
-        Title="MainWindow" Height="600" Width="950" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Opacity="0.96" Closed="MetroWindow_Closed" IconScalingMode="NoScaleSmallerFrame" ShowIconOnTitleBar="False">
+        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Opacity="0.96" Closed="MetroWindow_Closed" IconScalingMode="NoScaleSmallerFrame" ShowIconOnTitleBar="False">
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -162,7 +162,7 @@
     </Controls:MetroWindow.Resources>
 
     <Controls:MetroWindow.Background>
-        <ImageBrush ImageSource="images/BackGround2.jpg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="images/BackGround2.jpg" Stretch="UniformToFill" Opacity="0.9"/>
     </Controls:MetroWindow.Background>
 
     <Controls:MetroWindow.RightWindowCommands>

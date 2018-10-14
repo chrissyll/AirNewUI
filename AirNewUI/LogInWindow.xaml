@@ -11,7 +11,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="LogIn" Height="450" Width="700" Loaded="Window_Loaded" WindowStyle="None" Opacity="0.9" Visibility="Visible" MouseDown="MetroWindow_MouseDown" AllowsTransparency="True">
+        Title="LogIn" Height="550" Width="800" Loaded="Window_Loaded" WindowStyle="None" Opacity="0.9" Visibility="Visible" MouseDown="MetroWindow_MouseDown" AllowsTransparency="True">
     <Controls:MetroWindow.Resources>
         <sys:Double x:Key="FloatingWatermarkFontSize">14</sys:Double>
         <sys:Double x:Key="WindowTitleFontSize">16</sys:Double>
