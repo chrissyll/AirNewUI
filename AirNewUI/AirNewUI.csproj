@@ -142,6 +142,13 @@
     <Compile Include="FlightSeat.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="A_MVVM.xaml.cs">
+      <DependentUpon>A_MVVM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lab\SampleData.cs" />
+    <Compile Include="Lab\RelayCommand.cs" />
+    <Compile Include="Lab\Student.cs" />
+    <Compile Include="Lab\StudentViewModel.cs" />
     <Compile Include="LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -169,6 +176,10 @@
     <Compile Include="ViewPhoto.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
+    <Page Include="A_MVVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

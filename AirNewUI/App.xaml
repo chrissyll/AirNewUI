@@ -1,7 +1,7 @@
 ﻿<Application x:Class="WpfApplication.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="LogIn.xaml">  <!--MainWindow//LogIn-->
+             StartupUri="A_MVVM.xaml"> <!--MainWindow//LogIn/1.MVVM-->
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
