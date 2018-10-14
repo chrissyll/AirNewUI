@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirTicket"
         mc:Ignorable="d"
-        Height="450" Width="800">
-    <Grid Margin="0,0,-0.4,0">
+        d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="0,0,-0.4,0" Opacity="0.95">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="6*"/>
@@ -21,11 +21,10 @@
         <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="136,75,0,0" Grid.Row="1" Click="Button_Click"/>
         <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="277,24,0,0" Click="Button_Click_3"/>
         <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="537,24,0,0"/>
-        <Expander Header="訂單管理" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="406,22,0,0" Grid.RowSpan="2">
-            <Grid Background="#FFE5E5E5"/>
+        <Expander Header="訂單管理" HorizontalAlignment="Left" Height="360" VerticalAlignment="Top" Width="517" Margin="242,10.556,0,0" Grid.Row="1">
+            <DataGrid x:Name="datagrid1"/>
         </Expander>
         <Button Content="Update" HorizontalAlignment="Left" Margin="22,308,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" Height="318" VerticalAlignment="Top" Width="495" Margin="262,32,0,0" Grid.Row="1"/>
         <Label Content="中文姓" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,125,0,0" Grid.Row="1"/>
         <TextBox x:Name="cnFirst_txt" HorizontalAlignment="Left" Height="23" Margin="91,126,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="delete" HorizontalAlignment="Left" Margin="136,308,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
