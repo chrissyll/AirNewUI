@@ -145,8 +145,17 @@
     <Compile Include="FlightSeat.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.xaml.cs">
-      <DependentUpon>LogIn.xaml</DependentUpon>
+    <Compile Include="LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow_Lab.xaml.cs">
+      <DependentUpon>MainWindow_Lab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RegisterUserControl.xaml.cs">
+      <DependentUpon>RegisterUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoginUserControl.xaml.cs">
+      <DependentUpon>LoginUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
@@ -172,7 +181,19 @@
     <Compile Include="ViewPhoto.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
-    <Page Include="LogIn.xaml">
+    <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow_Lab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\RegisterUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LoginUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,6 +265,7 @@
       <DependentUpon>AirModel1.edmx</DependentUpon>
       <LastGenOutput>AirModel1.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\BackGround2.jpg" />
     <Resource Include="images\Background.jpg" />
   </ItemGroup>
   <ItemGroup>

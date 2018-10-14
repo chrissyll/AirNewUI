@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="AirNewUI.TabViews.RegisterUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AirNewUI"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="700"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" Background="White" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBox Margin="20 30 10 10" Padding="5"
+                        HorizontalContentAlignment="Stretch"
+                        Controls:TextBoxHelper.ClearTextButton="True"
+                        Controls:TextBoxHelper.UseFloatingWatermark="True"
+                        Controls:TextBoxHelper.Watermark="Email As Account"
+                        Controls:TextBoxHelper.WatermarkAlignment="Left"
+                        FontSize="14" FontWeight="DemiBold"
+                        ToolTip="請輸入帳號"/>
+                <ComboBox Margin="20 10 10 0" Padding="5"
+                          HorizontalContentAlignment="Stretch"
+                          Controls:TextBoxHelper.UseFloatingWatermark="True"
+                          Controls:TextBoxHelper.Watermark="Gender"
+                          FontSize="14" FontWeight="DemiBold"
+                          Controls:TextBoxHelper.ClearTextButton="True"
+                          >
+                    <ComboBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Test" />
+                        </ContextMenu>
+                    </ComboBox.ContextMenu>
+                    <ComboBoxItem Content="Item 1" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <PasswordBox Margin="10 30 20 10" Padding="5 5 5 0"
+                            Controls:TextBoxHelper.ClearTextButton="{Binding RelativeSource={RelativeSource Self}, Path=(Controls:TextBoxHelper.HasText), Mode=OneWay}"
+                            Controls:TextBoxHelper.UseFloatingWatermark="True"
+                            Controls:TextBoxHelper.Watermark="Password"
+                            Controls:TextBoxHelper.WatermarkAlignment="Right"
+                         FontSize="14" FontWeight="DemiBold"
+                         Style="{StaticResource MetroButtonRevealedPasswordBox}" 
+                         ToolTip="請輸入密碼"/>
+                <Label Margin="0 10 0 0" Name="ErrorMessage" HorizontalAlignment="Center" Content="" FontFamily="Calibri" Foreground="Red" ></Label>
+                <Button Name="LoginButton" Margin="20 10 20 0" Style="{StaticResource AccentedSquareButtonStyle}" Click="LoginButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <iconPacks:PackIconFontAwesome Margin="10 0 0 0" Kind="UserAltSolid" Width="15" Height="15"  VerticalAlignment="Center" />
+                        <TextBlock Text="Register" Margin="5 0 30 0" VerticalAlignment="Center" FontSize="15"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Label Margin="20 0 20 30" HorizontalAlignment="Right">
+                    <Hyperlink Name="LoginTab" Click="LoginTab_Click">
+                        <Run Text="Login" FontSize="12" />
+                    </Hyperlink>
+                </Label>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
