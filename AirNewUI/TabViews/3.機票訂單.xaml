@@ -22,7 +22,7 @@
             <ColumnDefinition Width="633*"/>
         </Grid.ColumnDefinitions>
         <TextBox Name="AirLineName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="22,49,0,0" Grid.Row="1"/>
-        <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="67,132,0,0" Grid.Row="1" Click="Button_Click"/>
+        <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="67,95,0,0" Grid.Row="1" Click="Button_Click"/>
         <Label Content="機票訂單管理" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,24,0,0"/>
         <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="116.2,24,0,0"/>
         <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="376.2,24,0,0"/>
@@ -30,7 +30,7 @@
         <Expander Header="訂單管理" Grid.Row="1" Grid.ColumnSpan="2" Margin="162,0,10,22.6" IsExpanded="True">
             <DataGrid x:Name="DataGrid1"/>
         </Expander>
-        <DatePicker Name="DatePicker1" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.022,8.855" Margin="22,89,0,0" Grid.Row="1"/>
+        <DatePicker Name="DatePicker1" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.022,8.855" Margin="22,140,0,0" Grid.Row="1"/>
 
         <!--<Grid Grid.Column="1" HorizontalAlignment="Left" Height="301" Margin="58.2,49,0,0" Grid.Row="1" VerticalAlignment="Top" Width="532" DataContext="{StaticResource orderViewSource}">
             <DataGrid x:Name="orderDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10" RowDetailsVisibilityMode="VisibleWhenSelected">
@@ -65,5 +65,7 @@
             </DataGrid>
         </Grid>-->
         <Label Content="航空公司名稱 :" HorizontalAlignment="Left" Margin="22,23,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="67,181,0,0" Grid.Row="1" Click="Button_Click_1"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="67,237,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
     </Grid>
 </UserControl>
