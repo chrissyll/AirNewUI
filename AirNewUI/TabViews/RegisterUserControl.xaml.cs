@@ -170,11 +170,11 @@ namespace AirTicket.TabViews
             msg.From = new MailAddress("msit120120@gmail.com", "資策會", Encoding.UTF8);
             msg.To.Add(Email);
             //郵件標題 
-            msg.Subject = "airticket";
+            msg.Subject = "[Airticket] Confirm E-mail Address";
             //郵件標題編碼  
             msg.SubjectEncoding = System.Text.Encoding.UTF8;
             //郵件內容
-            msg.Body = "<p style=\"color:red\">歡迎您加入會員</p>";
+            msg.Body = "<p style=\"color:blue\">Welcome!</p><p>Thanks for signing up with AirTicket!</p>";
             msg.IsBodyHtml = true;
             msg.BodyEncoding = Encoding.UTF8;       //郵件內容編碼 
             msg.Priority = MailPriority.Normal;     //郵件優先級 

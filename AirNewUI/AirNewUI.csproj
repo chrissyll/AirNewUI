@@ -282,6 +282,10 @@
       <DependentUpon>AirModel1.edmx</DependentUpon>
       <LastGenOutput>AirModel1.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\Background4.jpg" />
+    <Resource Include="images\BackGround5.jpg" />
+    <Resource Include="images\Background6.jpg" />
+    <Resource Include="images\Background1.jpg" />
     <Resource Include="images\facebook.png" />
     <Resource Include="images\google-plus.png" />
     <Resource Include="images\howcast.png" />

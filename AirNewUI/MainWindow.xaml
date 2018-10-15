@@ -219,14 +219,21 @@
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <local:會員管理 />
                             </Controls:HamburgerMenuIconItem.Tag>
+                        
                         </Controls:HamburgerMenuIconItem>
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountCircle}" Label="Private">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Airplane}" Label="Private">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <TabViews:LoginUserControl />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
-                        
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Octicons Kind=Briefcase}" Label="Briefcase">
+
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Car}" Label="Private">
+                            <Controls:HamburgerMenuIconItem.Tag>
+                                <TabViews:LoginUserControl />
+                            </Controls:HamburgerMenuIconItem.Tag>
+                        </Controls:HamburgerMenuIconItem>
+
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=City}" Label="Briefcase">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <UserControl>
                                     <StackPanel Orientation="Vertical">

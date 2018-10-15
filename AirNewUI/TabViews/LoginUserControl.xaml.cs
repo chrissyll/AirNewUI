@@ -81,13 +81,15 @@ namespace AirTicket.TabViews
 
         private async void ReisterTab_Click(object sender, RoutedEventArgs e)
         {
-            var disclaimer = @"我們的擔保與免責聲明
+            var disclaimer = @"Liability for our Services
+When permitted by law, AirTicket, and AirTicket’s suppliers and distributors, will not be responsible for lost profits, revenues, or data, financial losses or indirect, special, consequential, exemplary, or punitive damages.
 
-我們會以商業上合理的技術與注意程度提供「服務」，希望您會盡情使用。但關於「服務」，有些事情我們不予保證。
+To the extent permitted by law, the total liability of AirTicket, and its suppliers and distributors, for any claims under these terms, including for any implied warranties, is limited to the amount you paid us to use the Services (or, if we choose, to supplying you the Services again).
 
-除本條款或額外條款中明示規定者外，AirTicket 或其供應商或經銷商均不對「服務」做出任何特定保證。例如，我們不會就「服務」中的內容、「服務」之特定功能及其可靠性、可用性和符合您的需求的能力，做出任何承諾。我們僅以「現狀」提供「服務」。
+In all cases, AirTicket, and its suppliers and distributors, will not be liable for any loss or damage that is not reasonably foreseeable.
 
-部分司法管轄區會規定應提供特定擔保，例如對適銷性、特殊用途適用性及未侵權之默示擔保。凡法律准許時，我們均排除一切擔保責任。";
+We recognize that in some countries, you might have legal rights as a consumer. If you are using the Services for a personal purpose, then nothing in these terms or any additional terms limits any consumer legal rights which may not be waived by contract.";
+
             var mySettings = new MetroDialogSettings()
             {
                 AffirmativeButtonText = "Agree",
