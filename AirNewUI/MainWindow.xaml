@@ -162,7 +162,7 @@
     </Controls:MetroWindow.Resources>
 
     <Controls:MetroWindow.Background>
-        <ImageBrush ImageSource="images/BackGround3.jpg" Stretch="UniformToFill" Opacity="0.9"/>
+        <ImageBrush ImageSource="images/BackGround3.jpg" Stretch="UniformToFill"/>
     </Controls:MetroWindow.Background>
 
     <Controls:MetroWindow.RightWindowCommands>

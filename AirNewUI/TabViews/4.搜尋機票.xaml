@@ -25,13 +25,13 @@
         <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="277,24,0,0" Height="25"/>
         <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="537,24,0,0" Height="25"/>
         <Button Content="登出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="655,24,0,0" Height="25"/>
-        <DatePicker Name="DatePicker1" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.022,8.855" Margin="306,14.2,0,0" Grid.Row="1" Height="26" Width="90" SelectedDateChanged="DatePicker1_SelectedDateChanged"/>
-        <DatePicker Name="DatePicker2" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.022,8.855" Margin="415,14.2,0,0" Grid.Row="1" Height="26" Width="90"/>
+        <DatePicker Name="DatePicker1" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.022,8.855" Margin="297,15.2,0,0" Grid.Row="1" Height="26" Width="104" SelectedDateChanged="DatePicker1_SelectedDateChanged"/>
+        <DatePicker Name="DatePicker2" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.022,8.855" Margin="415,15.2,0,0" Grid.Row="1" Height="26" Width="100"/>
 
         <RadioButton Content="來回" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,51.2,0,0" Grid.Row="1" Checked="RadioButton_Checked" Height="18" Width="48"/>
         <RadioButton Content="單程" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,51.2,0,0" Grid.Row="1" Checked="RadioButton_Checked_1" Height="18" Width="48"/>
-        <ComboBox Name="combobox1" Text="出發地" HorizontalAlignment="Left" Margin="35,14.2,0,0" VerticalAlignment="Top" Width="120" KeyUp="ComboBox_KeyUp" IsEditable="True" Grid.Row="1" Height="26"/>
-        <ComboBox Name="combobox2" Text="目的地" HorizontalAlignment="Left" Margin="170,14.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsEditable="True" KeyUp="combobox2_KeyUp" Height="26"/>
+        <ComboBox Name="combobox1" Text="出發地" HorizontalAlignment="Left" Margin="35,15.2,0,0" VerticalAlignment="Top" Width="120" KeyUp="ComboBox_KeyUp" IsEditable="True" Grid.Row="1" Height="26"/>
+        <ComboBox Name="combobox2" Text="目的地" HorizontalAlignment="Left" Margin="166,15.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsEditable="True" KeyUp="combobox2_KeyUp" Height="26"/>
         <Viewbox Grid.Row="2" Stretch="Fill" Margin="0,0.4,0,-0.4">
             <Expander Header="航班" IsExpanded="True" Height="270" Width="794">
                 <ScrollViewer Background="#FFE5E5E5">
@@ -39,7 +39,7 @@
                 </ScrollViewer>
             </Expander>
         </Viewbox>
-        <ComboBox Name="comboboxnum" Text="人數" HorizontalAlignment="Left" Margin="520,14.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsEditable="True" Height="26">
+        <ComboBox Name="comboboxnum" Text="人數" HorizontalAlignment="Left" Margin="524,15.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsEditable="True" Height="26">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>

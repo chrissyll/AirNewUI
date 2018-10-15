@@ -27,15 +27,15 @@
             <Grid Background="#FFE5E5E5"/>
         </Expander>
         <ListBox Name="listbox1" Grid.Column="1" HorizontalAlignment="Left" Height="339" Margin="7.4,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="263">
-            <ListBoxItem Name="listboxflight" FontSize="16"/>
-            <ListBoxItem Name="listboxdeparture_airport_name" FontSize="16"/>
-            <ListBoxItem Name="listboxtime1" FontSize="16"/>
-            <ListBoxItem Name="listboxduration" FontSize="16"/>
-            <ListBoxItem Name="listboxarrival_airport_name" FontSize="16"/>
-            <ListBoxItem Name="listboxtime2" FontSize="16"/>
-            <ListBoxItem Name="listboxcabin" FontSize="16"/>
-            <ListBoxItem Name="listboxnum" FontSize="16"/>
-            <ListBoxItem Name="listboxprice" FontSize="16"/>
+            <ListBoxItem Name="listboxflight" FontSize="14"/>
+            <ListBoxItem Name="listboxdeparture_airport_name" FontSize="14"/>
+            <ListBoxItem Name="listboxtime1" FontSize="14"/>
+            <ListBoxItem Name="listboxduration" FontSize="14"/>
+            <ListBoxItem Name="listboxarrival_airport_name" FontSize="14"/>
+            <ListBoxItem Name="listboxtime2" FontSize="14"/>
+            <ListBoxItem Name="listboxcabin" FontSize="14"/>
+            <ListBoxItem Name="listboxnum" FontSize="14"/>
+            <ListBoxItem Name="listboxprice" FontSize="14"/>
         </ListBox>
         <ScrollViewer Grid.Column="1"   Margin="275.4,10,0,-0.4" Grid.Row="1" Background="White"  >
             <StackPanel x:Name="stackpanel1" />
