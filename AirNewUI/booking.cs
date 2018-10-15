@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirTicket
+namespace AirNewUI
 {
     using System;
     using System.Collections.Generic;
@@ -21,5 +21,8 @@ namespace AirTicket
         public string booking_return_date { get; set; }
         public string booking_number_of_days { get; set; }
         public string booking_total_amount { get; set; }
+    
+        public virtual car car { get; set; }
+        public virtual customer customer { get; set; }
     }
 }

@@ -7,17 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirTicket
+namespace AirNewUI
 {
     using System;
     using System.Collections.Generic;
     
     public partial class customer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public customer()
+        {
+            this.bookings = new HashSet<booking>();
+        }
+    
         public int customer_id { get; set; }
         public string customer_firstname { get; set; }
         public string customer_lastname { get; set; }
         public string customer_phone { get; set; }
         public string customer_dob { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<booking> bookings { get; set; }
     }
 }

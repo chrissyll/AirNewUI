@@ -25,7 +25,7 @@ namespace AirTicket
             //datagrid1.FrozenColumnCount = 1;
         }
 
-        AirEntities dbContext = new AirEntities();
+        AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
         // 會員管理
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -108,7 +108,7 @@ namespace AirTicket
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            email_txt.Text = "547@gmail.com";
+            email_txt.Text = "jackywu547@gmail.com";
             cnFirst_txt.Text = "無";
             cnLast_txt.Text = "奇隆";
             phone_txt.Text = "0952120120";

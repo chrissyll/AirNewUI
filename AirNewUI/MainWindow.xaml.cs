@@ -48,8 +48,28 @@ namespace AirTicket
         }
 
         //登出
-        private void BtnLoginout_OnClick(object sender, RoutedEventArgs e)
+        private async void BtnLoginout_OnClick(object sender, RoutedEventArgs e)
         {
+            var mySettings = new MetroDialogSettings()
+            {
+                AnimateShow = true,
+                AnimateHide = true
+            };
+
+            var controller = await this.ShowProgressAsync("Please wait...", "loading", settings: mySettings);
+            controller.SetIndeterminate();
+
+            await Task.Delay(1500);
+            await controller.CloseAsync();
+
+            MessageBox.Show("確認登出");
+
+            //txbLoginEntity.Text = "未登入";
+
+            LogInWindow mainWindow = new LogInWindow();
+            mainWindow.Show();
+            this.Hide();
+
         }
     }
 }

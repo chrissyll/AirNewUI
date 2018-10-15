@@ -157,6 +157,12 @@
     <Compile Include="MainWindow_Lab.xaml.cs">
       <DependentUpon>MainWindow_Lab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TabViews\3.機票訂單.xaml.cs">
+      <DependentUpon>3.機票訂單.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\4.搜尋機票.xaml.cs">
+      <DependentUpon>4.搜尋機票.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TabViews\RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
     </Compile>
@@ -181,8 +187,23 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TabViews\UserControlFlight.xaml.cs">
+      <DependentUpon>UserControlFlight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\UserControlPassenger.xaml.cs">
+      <DependentUpon>UserControlPassenger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\信用卡結帳.xaml.cs">
+      <DependentUpon>信用卡結帳.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\旅客資料填寫.xaml.cs">
+      <DependentUpon>旅客資料填寫.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TabViews\會員管理.xaml.cs">
       <DependentUpon>會員管理.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\機票訂單確認.xaml.cs">
+      <DependentUpon>機票訂單確認.xaml</DependentUpon>
     </Compile>
     <Compile Include="View.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
@@ -199,6 +220,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\3.機票訂單.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\4.搜尋機票.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -232,7 +261,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TabViews\UserControlFlight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\UserControlPassenger.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\信用卡結帳.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\旅客資料填寫.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TabViews\會員管理.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\機票訂單確認.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

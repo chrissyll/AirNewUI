@@ -24,7 +24,7 @@ namespace AirTicket
     {
         public MainWindow_Lab()
         {
-            AirEntities dbContext = new AirEntities();
+            AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
             InitializeComponent();
             MetroDataGrid.ItemsSource = dbContext.Members.ToList();
         }

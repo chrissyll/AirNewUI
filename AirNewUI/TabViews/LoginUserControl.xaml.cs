@@ -23,7 +23,7 @@ namespace AirTicket.TabViews
     public partial class LoginUserControl
     {
         MetroWindow window;
-        AirEntities dbContext = new AirEntities();
+        AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
 
         public LoginUserControl()
         {
@@ -33,6 +33,22 @@ namespace AirTicket.TabViews
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+
+            var mySettings = new MetroDialogSettings()
+            {
+                AnimateShow = true,
+                AnimateHide = true
+            };
+
+            var controller = await window.ShowProgressAsync("Please wait...", "Authenticating User", settings: mySettings);
+            controller.SetIndeterminate();
+
+            var result = dbContext.Members.AsEnumerable().FirstOrDefault(x =>
+            x.Member_Account == email_txt.Text && x.Member_Password == password_txt.Password);
+
+            await Task.Delay(2200);
+            await controller.CloseAsync();
+
             if (email_txt.Text == "")
             {
                 email_txt.BorderBrush = Brushes.Red;
@@ -49,21 +65,6 @@ namespace AirTicket.TabViews
             {
                 password_txt.BorderBrush = Brushes.LightGray;
             }
-
-            var mySettings = new MetroDialogSettings()
-            {
-                AnimateShow = true,
-                AnimateHide = true
-            };
-
-            var controller = await window.ShowProgressAsync("Please wait...", "Authenticating User", settings: mySettings);
-            controller.SetIndeterminate();
-
-            var result = dbContext.Members.AsEnumerable().FirstOrDefault(x =>
-           x.Member_Account == email_txt.Text && x.Member_Password == password_txt.Password);
-
-            await Task.Delay(2200);
-            await controller.CloseAsync();
 
             if (result != null)
             {
@@ -112,6 +113,12 @@ We recognize that in some countries, you might have legal rights as a consumer. 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             window.Hide();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            email_txt.Text = "547@gmail.com";
+            password_txt.Password = "547";
         }
     }
 }

@@ -36,7 +36,7 @@
         <TextBox x:Name="phone_txt" HorizontalAlignment="Left" Height="23" Margin="91,247.556,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="birth_date" HorizontalAlignment="Left" Margin="91,205.556,0,0" Grid.Row="1" VerticalAlignment="Top" SelectedDate="{Binding DatePicker, StringFormat='dd/MM/yyyy'}" />
         <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,12.556,0,0" Grid.Row="1" FontWeight="Bold"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_5">
+        <Button Content="" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_5" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/AirNewUI;component/images/user.png"/>
             </Button.Background>

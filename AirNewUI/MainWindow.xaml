@@ -219,14 +219,20 @@
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <local:會員管理 />
                             </Controls:HamburgerMenuIconItem.Tag>
-                        
                         </Controls:HamburgerMenuIconItem>
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Airplane}" Label="Private">
+                        
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Airplane}" Label="機票訂單">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <TabViews:LoginUserControl />
+                                <local:機票訂單 />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
 
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AirplaneTakeoff}" Label="搜尋機票">
+                            <Controls:HamburgerMenuIconItem.Tag>
+                                <local:搜尋機票 />
+                            </Controls:HamburgerMenuIconItem.Tag>
+                        </Controls:HamburgerMenuIconItem>
+                        
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Car}" Label="Private">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <TabViews:LoginUserControl />

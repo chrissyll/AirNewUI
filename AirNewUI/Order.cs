@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirTicket
+namespace AirNewUI
 {
     using System;
     using System.Collections.Generic;
@@ -33,11 +33,15 @@ namespace AirTicket
         public Nullable<int> Member_ID { get; set; }
         public Nullable<bool> Insurance { get; set; }
         public string Payment { get; set; }
-        public Nullable<bool> NonStop { get; set; }
+        public string NonStop { get; set; }
+        public Nullable<System.DateTime> Order_Time { get; set; }
     
         public virtual Airline Airline { get; set; }
         public virtual Flight Flight { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Passenger> Passengers { get; set; }
+        public virtual Airport Airport { get; set; }
+        public virtual Airport Airport1 { get; set; }
+        public virtual Cabin Cabin { get; set; }
     }
 }
