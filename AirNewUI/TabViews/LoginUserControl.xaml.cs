@@ -114,11 +114,5 @@ We recognize that in some countries, you might have legal rights as a consumer. 
             mainWindow.Show();
             window.Hide();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            email_txt.Text = "jackywu547@gmail.com";
-            password_txt.Password = "547";
-        }
     }
 }

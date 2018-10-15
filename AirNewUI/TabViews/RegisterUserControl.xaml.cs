@@ -202,14 +202,5 @@ namespace AirTicket.TabViews
 
             ((LogInWindow)window).Tabs.SelectedIndex = 0;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            firstname_txt.Text = "Wu";
-            lastname_txt.Text = "Wu";
-            password_txt.Password = "547";
-            phone_txt.Text = "0989120120";
-            email_txt.Text = "jackywu547@gmail.com";
-        }
     }
 }

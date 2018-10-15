@@ -92,11 +92,6 @@
                     </Hyperlink>
                 </Label>
             </StackPanel>
-            <Button Content="Button" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="10,281,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="30" Click="Button_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="/AirNewUI;component/images/useradd.png"/>
-                </Button.Background>
-            </Button>
         </Grid>
     </Grid>
 </UserControl>
