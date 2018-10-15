@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirNewUI
+namespace AirTicket
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,6 @@ namespace AirNewUI
         public Cabin()
         {
             this.AirplainCabinDetails = new HashSet<AirplainCabinDetail>();
-            this.Orders = new HashSet<Order>();
         }
     
         public int Cabin_ID { get; set; }
@@ -26,7 +25,5 @@ namespace AirNewUI
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AirplainCabinDetail> AirplainCabinDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
     }
 }

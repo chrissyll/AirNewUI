@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AirModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AirModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Airline">
           <Key>
             <PropertyRef Name="Airline_ID" />
@@ -197,7 +197,7 @@
           <Property Name="Member_En_FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="Member_En_LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="Member_Gender" Type="char" MaxLength="2" />
-          <Property Name="Date_Of_Birth" Type="date" />
+          <Property Name="Date_Of_Birth" Type="datetime" />
           <Property Name="Member_Phone" Type="nvarchar" MaxLength="20" />
           <Property Name="Country_ID" Type="int" />
         </EntityType>
@@ -236,8 +236,7 @@
           <Property Name="Member_ID" Type="int" />
           <Property Name="Insurance" Type="bit" />
           <Property Name="Payment" Type="nvarchar" MaxLength="10" />
-          <Property Name="NonStop" Type="nvarchar" MaxLength="10" />
-          <Property Name="Order_Time" Type="datetime" />
+          <Property Name="NonStop" Type="bit" />
         </EntityType>
         <EntityType Name="Passenger">
           <Key>
@@ -338,54 +337,6 @@
             </Principal>
             <Dependent Role="Airport">
               <PropertyRef Name="City_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_booking_car">
-          <End Role="car" Type="Self.car" Multiplicity="0..1" />
-          <End Role="booking" Type="Self.booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="car">
-              <PropertyRef Name="car_id" />
-            </Principal>
-            <Dependent Role="booking">
-              <PropertyRef Name="booking_car_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_booking_customer">
-          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
-          <End Role="booking" Type="Self.booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="customer">
-              <PropertyRef Name="customer_id" />
-            </Principal>
-            <Dependent Role="booking">
-              <PropertyRef Name="booking_customer_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_car_category">
-          <End Role="category" Type="Self.category" Multiplicity="0..1" />
-          <End Role="car" Type="Self.car" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category">
-              <PropertyRef Name="category_id" />
-            </Principal>
-            <Dependent Role="car">
-              <PropertyRef Name="car_category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CarImage_car">
-          <End Role="car" Type="Self.car" Multiplicity="1" />
-          <End Role="CarImage" Type="Self.CarImage" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="car">
-              <PropertyRef Name="car_id" />
-            </Principal>
-            <Dependent Role="CarImage">
-              <PropertyRef Name="car_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -557,42 +508,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_Airport">
-          <End Role="Airport" Type="Self.Airport" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Airport">
-              <PropertyRef Name="Airport_ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Departure_Airport_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Airport2">
-          <End Role="Airport" Type="Self.Airport" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Airport">
-              <PropertyRef Name="Airport_ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Arrival_Airport_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Cabin">
-          <End Role="Cabin" Type="Self.Cabin" Multiplicity="0..1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cabin">
-              <PropertyRef Name="Cabin_ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Cabin_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Order_Flight">
           <End Role="Flight" Type="Self.Flight" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
@@ -745,22 +660,6 @@
             <End Role="City" EntitySet="City" />
             <End Role="Airport" EntitySet="Airport" />
           </AssociationSet>
-          <AssociationSet Name="FK_booking_car" Association="Self.FK_booking_car">
-            <End Role="car" EntitySet="car" />
-            <End Role="booking" EntitySet="booking" />
-          </AssociationSet>
-          <AssociationSet Name="FK_booking_customer" Association="Self.FK_booking_customer">
-            <End Role="customer" EntitySet="customer" />
-            <End Role="booking" EntitySet="booking" />
-          </AssociationSet>
-          <AssociationSet Name="FK_car_category" Association="Self.FK_car_category">
-            <End Role="category" EntitySet="category" />
-            <End Role="car" EntitySet="car" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CarImage_car" Association="Self.FK_CarImage_car">
-            <End Role="car" EntitySet="car" />
-            <End Role="CarImage" EntitySet="CarImage" />
-          </AssociationSet>
           <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
             <End Role="Country" EntitySet="Country" />
             <End Role="City" EntitySet="City" />
@@ -817,18 +716,6 @@
             <End Role="Airline" EntitySet="Airline" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Airport" Association="Self.FK_Order_Airport">
-            <End Role="Airport" EntitySet="Airport" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Airport2" Association="Self.FK_Order_Airport2">
-            <End Role="Airport" EntitySet="Airport" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Cabin" Association="Self.FK_Order_Cabin">
-            <End Role="Cabin" EntitySet="Cabin" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
           <AssociationSet Name="FK_Order_Flight" Association="Self.FK_Order_Flight">
             <End Role="Flight" EntitySet="Flight" />
             <End Role="Order" EntitySet="Order" />
@@ -846,7 +733,8 @@
             <End Role="ViewPhoto" EntitySet="ViewPhoto" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AirModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -900,8 +788,6 @@
           <NavigationProperty Name="Commericals" Relationship="Self.FK_Commerical_Airport" FromRole="Airport" ToRole="Commerical" />
           <NavigationProperty Name="CountryCityAirports" Relationship="Self.FK_CountryCityAirport_Airport" FromRole="Airport" ToRole="CountryCityAirport" />
           <NavigationProperty Name="Flights" Relationship="Self.FK_Flight_Airport" FromRole="Airport" ToRole="Flight" />
-          <NavigationProperty Name="Orders" Relationship="AirModel.FK_Order_Airport" FromRole="Airport" ToRole="Order" />
-          <NavigationProperty Name="Orders1" Relationship="AirModel.FK_Order_Airport2" FromRole="Airport" ToRole="Order" />
         </EntityType>
         <EntityType Name="Area">
           <Key>
@@ -924,8 +810,6 @@
           <Property Name="booking_return_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="booking_number_of_days" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="booking_total_amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="car" Relationship="AirModel.FK_booking_car" FromRole="booking" ToRole="car" />
-          <NavigationProperty Name="customer" Relationship="AirModel.FK_booking_customer" FromRole="booking" ToRole="customer" />
         </EntityType>
         <EntityType Name="Cabin">
           <Key>
@@ -934,7 +818,6 @@
           <Property Name="Cabin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cabin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AirplainCabinDetails" Relationship="Self.FK_AirplainCabinDetail_Cabin" FromRole="Cabin" ToRole="AirplainCabinDetail" />
-          <NavigationProperty Name="Orders" Relationship="AirModel.FK_Order_Cabin" FromRole="Cabin" ToRole="Order" />
         </EntityType>
         <EntityType Name="car">
           <Key>
@@ -951,9 +834,6 @@
           <Property Name="car_milage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="car_horse_power" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="car_insurance_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="bookings" Relationship="AirModel.FK_booking_car" FromRole="car" ToRole="booking" />
-          <NavigationProperty Name="category" Relationship="AirModel.FK_car_category" FromRole="car" ToRole="category" />
-          <NavigationProperty Name="CarImages" Relationship="AirModel.FK_CarImage_car" FromRole="car" ToRole="CarImage" />
         </EntityType>
         <EntityType Name="category">
           <Key>
@@ -962,7 +842,6 @@
           <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="category_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="cars" Relationship="AirModel.FK_car_category" FromRole="category" ToRole="car" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -1005,7 +884,6 @@
           <Property Name="customer_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="customer_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="customer_dob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="bookings" Relationship="AirModel.FK_booking_customer" FromRole="customer" ToRole="booking" />
         </EntityType>
         <EntityType Name="Flight">
           <Key>
@@ -1037,7 +915,7 @@
           <Property Name="Member_En_FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Member_En_LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Member_Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="Date_Of_Birth" Type="DateTime" Precision="0" />
+          <Property Name="Date_Of_Birth" Type="DateTime" Precision="3" />
           <Property Name="Member_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Country_ID" Type="Int32" />
           <NavigationProperty Name="Country" Relationship="Self.FK_Member_Country" FromRole="Member" ToRole="Country" />
@@ -1082,14 +960,10 @@
           <Property Name="Member_ID" Type="Int32" />
           <Property Name="Insurance" Type="Boolean" />
           <Property Name="Payment" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="NonStop" Type="String" />
+          <Property Name="NonStop" Type="Boolean" />
           <NavigationProperty Name="Airline" Relationship="Self.FK_Order_Airline" FromRole="Order" ToRole="Airline" />
           <NavigationProperty Name="Flight" Relationship="Self.FK_Order_Flight" FromRole="Order" ToRole="Flight" />
           <NavigationProperty Name="Passengers" Relationship="Self.FK_Passenger_Order" FromRole="Order" ToRole="Passenger" />
-          <Property Name="Order_Time" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Airport" Relationship="AirModel.FK_Order_Airport" FromRole="Order" ToRole="Airport" />
-          <NavigationProperty Name="Airport1" Relationship="AirModel.FK_Order_Airport2" FromRole="Order" ToRole="Airport" />
-          <NavigationProperty Name="Cabin" Relationship="AirModel.FK_Order_Cabin" FromRole="Order" ToRole="Cabin" />
         </EntityType>
         <EntityType Name="Passenger">
           <Key>
@@ -1145,7 +1019,6 @@
           </Key>
           <Property Name="car_id" Type="Int32" Nullable="false" />
           <Property Name="car_picture" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="car" Relationship="AirModel.FK_CarImage_car" FromRole="CarImage" ToRole="car" />
         </EntityType>
         <EntityType Name="Company">
           <Key>
@@ -1603,119 +1476,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <AssociationSet Name="FK_Order_Airport" Association="AirModel.FK_Order_Airport">
-            <End Role="Airport" EntitySet="Airports" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Airport2" Association="AirModel.FK_Order_Airport2">
-            <End Role="Airport" EntitySet="Airports" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_booking_car" Association="AirModel.FK_booking_car">
-            <End Role="car" EntitySet="cars" />
-            <End Role="booking" EntitySet="bookings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_booking_customer" Association="AirModel.FK_booking_customer">
-            <End Role="customer" EntitySet="customers" />
-            <End Role="booking" EntitySet="bookings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_Cabin" Association="AirModel.FK_Order_Cabin">
-            <End Role="Cabin" EntitySet="Cabins" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_car_category" Association="AirModel.FK_car_category">
-            <End Role="category" EntitySet="categories" />
-            <End Role="car" EntitySet="cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CarImage_car" Association="AirModel.FK_CarImage_car">
-            <End Role="car" EntitySet="cars" />
-            <End Role="CarImage" EntitySet="CarImages" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_Order_Airport">
-          <End Type="AirModel.Airport" Role="Airport" Multiplicity="0..1" />
-          <End Type="AirModel.Order" Role="Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Airport">
-              <PropertyRef Name="Airport_ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Departure_Airport_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Airport2">
-          <End Type="AirModel.Airport" Role="Airport" Multiplicity="0..1" />
-          <End Type="AirModel.Order" Role="Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Airport">
-              <PropertyRef Name="Airport_ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Arrival_Airport_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_booking_car">
-          <End Type="AirModel.car" Role="car" Multiplicity="0..1" />
-          <End Type="AirModel.booking" Role="booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="car">
-              <PropertyRef Name="car_id" />
-            </Principal>
-            <Dependent Role="booking">
-              <PropertyRef Name="booking_car_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_booking_customer">
-          <End Type="AirModel.customer" Role="customer" Multiplicity="0..1" />
-          <End Type="AirModel.booking" Role="booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="customer">
-              <PropertyRef Name="customer_id" />
-            </Principal>
-            <Dependent Role="booking">
-              <PropertyRef Name="booking_customer_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Order_Cabin">
-          <End Type="AirModel.Cabin" Role="Cabin" Multiplicity="0..1" />
-          <End Type="AirModel.Order" Role="Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cabin">
-              <PropertyRef Name="Cabin_ID" />
-            </Principal>
-            <Dependent Role="Order">
-              <PropertyRef Name="Cabin_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_car_category">
-          <End Type="AirModel.category" Role="category" Multiplicity="0..1" />
-          <End Type="AirModel.car" Role="car" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category">
-              <PropertyRef Name="category_id" />
-            </Principal>
-            <Dependent Role="car">
-              <PropertyRef Name="car_category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CarImage_car">
-          <End Type="AirModel.car" Role="car" Multiplicity="1" />
-          <End Type="AirModel.CarImage" Role="CarImage" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="car">
-              <PropertyRef Name="car_id" />
-            </Principal>
-            <Dependent Role="CarImage">
-              <PropertyRef Name="car_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1911,7 +1672,6 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="AirModel.Order">
               <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="Order_Time" ColumnName="Order_Time" />
                 <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
                 <ScalarProperty Name="Airline_ID" ColumnName="Airline_ID" />
                 <ScalarProperty Name="Flight_ID" ColumnName="Flight_ID" />

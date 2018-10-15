@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirNewUI
+namespace AirTicket
 {
     using System;
     using System.Data.Entity;

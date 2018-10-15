@@ -7,20 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirNewUI
+namespace AirTicket
 {
     using System;
     using System.Collections.Generic;
     
     public partial class car
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public car()
-        {
-            this.bookings = new HashSet<booking>();
-            this.CarImages = new HashSet<CarImage>();
-        }
-    
         public int car_id { get; set; }
         public Nullable<int> car_category_id { get; set; }
         public string car_name { get; set; }
@@ -32,11 +25,5 @@ namespace AirNewUI
         public string car_milage { get; set; }
         public string car_horse_power { get; set; }
         public string car_insurance_number { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking> bookings { get; set; }
-        public virtual category category { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CarImage> CarImages { get; set; }
     }
 }

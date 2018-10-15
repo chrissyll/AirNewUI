@@ -157,9 +157,6 @@
     <Compile Include="MainWindow_Lab.xaml.cs">
       <DependentUpon>MainWindow_Lab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TabViews\3.機票訂單.xaml.cs">
-      <DependentUpon>3.機票訂單.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TabViews\RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
     </Compile>
@@ -202,10 +199,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Icons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TabViews\3.機票訂單.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

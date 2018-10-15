@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirNewUI
+namespace AirTicket
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,5 @@ namespace AirNewUI
     {
         public int car_id { get; set; }
         public byte[] car_picture { get; set; }
-    
-        public virtual car car { get; set; }
     }
 }
