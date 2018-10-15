@@ -24,6 +24,7 @@ namespace AirTicket.TabViews
     {
         MetroWindow window;
         AirEntities dbContext = new AirEntities();
+        public static string UserName = "";
 
         public LoginUserControl()
         {
@@ -69,6 +70,7 @@ namespace AirTicket.TabViews
             if (result != null)
             {
                 MessageBox.Show("登入成功");
+                LoginUserControl.UserName = email_txt.Text;
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 window.Hide();

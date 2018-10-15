@@ -1,4 +1,5 @@
-﻿using MahApps.Metro;
+﻿using AirTicket.TabViews;
+using MahApps.Metro;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -31,10 +32,10 @@ namespace AirTicket
                 ThemeManager.GetAccent("Steel"),
                 ThemeManager.GetAppTheme("BaseLight"));
 
-            txbLoginEntity.Text = "Chrissy";
+            txbLoginEntity.Text = LoginUserControl.UserName;
             string appLocation = AppDomain.CurrentDomain.BaseDirectory;
             empPhotoIcon.Source = 
-                new BitmapImage(new Uri(appLocation.Replace(@"\bin\Debug\", @"\images\Avatar1.png")));
+                new BitmapImage(new Uri(appLocation.Replace(@"\bin\Debug\", @"\images\user0.png")));
         }
 
         private void MetroWindow_Closed(object sender, EventArgs e)
@@ -62,9 +63,8 @@ namespace AirTicket
             await Task.Delay(1500);
             await controller.CloseAsync();
 
+            txbLoginEntity.Text = "未登入";
             MessageBox.Show("確認登出");
-
-            //txbLoginEntity.Text = "未登入";
 
             LogInWindow mainWindow = new LogInWindow();
             mainWindow.Show();

@@ -332,6 +332,7 @@
       <DependentUpon>AirModel1.edmx</DependentUpon>
       <LastGenOutput>AirModel1.cs</LastGenOutput>
     </Content>
+    <Resource Include="images\user0.png" />
     <Resource Include="images\Background4.jpg" />
     <Resource Include="images\BackGround5.jpg" />
     <Resource Include="images\Background6.jpg" />
