@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirNewUI.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,11 +52,10 @@ namespace AirTicket
                 psg.Add(ucp);
             }
 
-
-
+            
             信用卡結帳 cr = new 信用卡結帳();
             cr.getPassenger = this;
-            //cr.Show();
+            Tools.GetIconItem("SearchFlightTab").Tag = cr;
         }
     }
 }

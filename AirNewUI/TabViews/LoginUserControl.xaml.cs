@@ -72,6 +72,7 @@ namespace AirTicket.TabViews
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 window.Hide();
+                Application.Current.MainWindow = mainWindow;
             }
             else
             {
@@ -113,6 +114,7 @@ We recognize that in some countries, you might have legal rights as a consumer. 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             window.Hide();
+            Application.Current.MainWindow = mainWindow;
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)

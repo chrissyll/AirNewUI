@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AirTicket"
              mc:Ignorable="d" Height="265" Width="602">
     <Viewbox Stretch="Fill">
-        <Grid Height="319" Width="800">
+        <Grid Height="319" Width="800" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="63*"/>
                 <RowDefinition Height="253*"/>

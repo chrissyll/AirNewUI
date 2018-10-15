@@ -227,8 +227,8 @@
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
 
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AirplaneTakeoff}" Label="搜尋機票">
-                            <Controls:HamburgerMenuIconItem.Tag>
+                        <Controls:HamburgerMenuIconItem x:Name="SearchFlightTab" Icon="{iconPacks:Material Kind=AirplaneTakeoff}" Label="搜尋機票">
+                            <Controls:HamburgerMenuIconItem.Tag >
                                 <local:搜尋機票 />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>

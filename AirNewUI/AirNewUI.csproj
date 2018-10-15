@@ -205,6 +205,7 @@
     <Compile Include="TabViews\機票訂單確認.xaml.cs">
       <DependentUpon>機票訂單確認.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Tools.cs" />
     <Compile Include="View.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
 using AirNewUI;
+using MahApps.Metro.Controls;
+using AirNewUI.Utilities;
 
 namespace AirTicket
 {
@@ -145,14 +147,12 @@ namespace AirTicket
 
             MessageBox.Show(flight + " " + departure_airport_name + " " + time1 + " " + duration + " " + arrival_airport_name + " " + time2 + " " + cabin + " " + price);
 
-            
+            // MetroWindow window =  (MetroWindow)Application.Current.MainWindow;
+            // HamburgerMenuIconItem iconItem = (HamburgerMenuIconItem)window.FindName("SearchFlightTab");
             旅客資料填寫 f = new 旅客資料填寫();
             f.getTicket = this;
-            f.Show();
-
-          
-
-            
+            // f.Show();
+            Tools.GetIconItem("SearchFlightTab").Tag = f;
         }
         //點擊使用者控制項的頭等艙按鈕
         private void Ucf_AddChild1(object sender, EventArgs e)
@@ -173,9 +173,14 @@ namespace AirTicket
 
             MessageBox.Show(flight + " " + departure_airport_name + " " + time1 + " " + duration + " " + arrival_airport_name + " " + time2 + " " + cabin + " " + price);
 
+            //旅客資料填寫 f = new 旅客資料填寫();
+            //f.getTicket = this;
+            //f.Show();
+            MetroWindow window = (MetroWindow)Application.Current.MainWindow;
+            HamburgerMenuIconItem iconItem = (HamburgerMenuIconItem)window.FindName("SearchFlightTab");
             旅客資料填寫 f = new 旅客資料填寫();
             f.getTicket = this;
-            f.Show();
+            iconItem.Tag = f;
         }
 
         private void ComboBox_KeyUp(object sender, KeyEventArgs e)
@@ -233,6 +238,15 @@ namespace AirTicket
         {
             //點選單程把回程時間隱藏
             this.DatePicker2.Visibility = Visibility.Hidden;
+        }
+
+        private void TestBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MetroWindow window = (MetroWindow)Application.Current.MainWindow;
+            HamburgerMenuIconItem iconItem = (HamburgerMenuIconItem)window.FindName("SearchFlightTab");
+            旅客資料填寫 f = new 旅客資料填寫();
+            f.getTicket = this;
+            iconItem.Tag = f;
         }
     }
     

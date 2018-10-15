@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirNewUI.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,8 +54,7 @@ namespace AirTicket
 
             機票訂單確認 oc = new 機票訂單確認();
             oc.getCard = this;
-            //oc.Show();
-
+            Tools.GetIconItem("SearchFlightTab").Tag = oc;
 
         }
 
