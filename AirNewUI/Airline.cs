@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirTicket
+namespace AirNewUI
 {
     using System;
     using System.Collections.Generic;

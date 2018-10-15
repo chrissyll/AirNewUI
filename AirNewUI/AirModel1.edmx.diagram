@@ -54,6 +54,13 @@
         <AssociationConnector Association="AirModel.FK_MemberViewDetail_View" ManuallyRouted="false" />
         <AssociationConnector Association="AirModel.FK_Passenger_Order" ManuallyRouted="false" />
         <AssociationConnector Association="AirModel.FK_ViewPhoto_View" ManuallyRouted="false" />
+        <AssociationConnector Association="AirModel.FK_Order_Airport" />
+        <AssociationConnector Association="AirModel.FK_Order_Airport2" />
+        <AssociationConnector Association="AirModel.FK_booking_car" />
+        <AssociationConnector Association="AirModel.FK_booking_customer" />
+        <AssociationConnector Association="AirModel.FK_Order_Cabin" />
+        <AssociationConnector Association="AirModel.FK_car_category" />
+        <AssociationConnector Association="AirModel.FK_CarImage_car" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

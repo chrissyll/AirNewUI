@@ -223,7 +223,7 @@
                         </Controls:HamburgerMenuIconItem>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Airplane}" Label="Private">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <TabViews:LoginUserControl />
+                                <local:機票訂單 />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
 

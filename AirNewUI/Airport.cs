@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirTicket
+namespace AirNewUI
 {
     using System;
     using System.Collections.Generic;
@@ -20,6 +20,8 @@ namespace AirTicket
             this.Commericals = new HashSet<Commerical>();
             this.CountryCityAirports = new HashSet<CountryCityAirport>();
             this.Flights = new HashSet<Flight>();
+            this.Orders = new HashSet<Order>();
+            this.Orders1 = new HashSet<Order>();
         }
     
         public int Airport_ID { get; set; }
@@ -34,5 +36,9 @@ namespace AirTicket
         public virtual ICollection<CountryCityAirport> CountryCityAirports { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Flight> Flights { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders1 { get; set; }
     }
 }

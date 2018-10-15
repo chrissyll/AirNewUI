@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using AirNewUI;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -79,8 +80,8 @@ namespace AirTicket.TabViews
             }
         }
 
-        private async void ReisterTab_Click(object sender, RoutedEventArgs e)
-        {
+        private async void ReisterTab_Click(object sender, RoutedEventArgs e)   //隱私權免責聲明
+        {   
             var disclaimer = @"Liability for our Services
 When permitted by law, AirTicket, and AirTicket’s suppliers and distributors, will not be responsible for lost profits, revenues, or data, financial losses or indirect, special, consequential, exemplary, or punitive damages.
 
