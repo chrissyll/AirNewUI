@@ -29,7 +29,7 @@ namespace AirTicket
                             ThemeManager.GetAppTheme("BaseLight"));
         }
 
-        AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
+        AirEntities dbContext = new AirEntities();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

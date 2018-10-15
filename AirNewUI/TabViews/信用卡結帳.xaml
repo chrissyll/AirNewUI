@@ -8,26 +8,34 @@
         d:DesignHeight="450" d:DesignWidth="800" Loaded="Window_Loaded" >
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/AirNewUI;component/images/3132.jpg"/>
+            <ImageBrush ImageSource="/AirTicket;component/images/3132.jpg"/>
         </Grid.Background>
-        <Border HorizontalAlignment="Center" Height="260" VerticalAlignment="Center" Width="500" Margin="209,144,84.6,16" BorderThickness="6" CornerRadius="10" BorderBrush="#FFDEDEDE" Background="#FFDEDEDE" Opacity="0.9">
-            <Button Content="DEMO" Margin="219.6,208.6,210.4,18.4" Click="Button_Click_1"/>
-        </Border>
-        <TextBox Name="Cvv" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" Text="CVV" VerticalAlignment="Center" Width="107" Margin="295,328,391.6,68"/>
-        <Button Content="下一步" HorizontalAlignment="Center" VerticalAlignment="Center" Width="66" Margin="599,357,128.6,40" Height="23" Click="Button_Click"/>
-        <TextBox Name="Validthur" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" Text="月/年" VerticalAlignment="Center" Width="107" Margin="295,280,391.6,116"/>
-        <TextBox Name="name1" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="姓名" VerticalAlignment="Center" Width="107" Margin="295,185,391.6,210"/>
-        <TextBox Name="CreadeCardId" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" Text="卡號" VerticalAlignment="Center" Width="251" Margin="295,232,247.6,164"/>
-        <Image HorizontalAlignment="Center" Height="93" VerticalAlignment="Center" Width="120" Margin="389,36,284.6,291" Source="/AirNewUI;component/images/mastercard.png" />
-        <Image HorizontalAlignment="Center" Height="93" VerticalAlignment="Center" Width="120" Margin="239,36,434.6,291" Source="/AirNewUI;component/images/visa.png" />
-        <Image HorizontalAlignment="Center" Height="93" VerticalAlignment="Center" Width="120" Margin="545,36,128.6,291" Source="/AirNewUI;component/images/amex.png" />
-        <Button Content="上一步" HorizontalAlignment="Center" VerticalAlignment="Center" Width="66" Margin="511,357,216.6,40" Height="23"/>
-        <Label Content="持卡人" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,200,0,0"/>
-        <Label Content="安全碼" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,342,0,0"/>
-        <RadioButton Name="Visa" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="229,104,0,0"/>
-        <RadioButton Name="MasterCard" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,104,0,0"/>
-        <RadioButton Name="Amex" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="536,104,0,0"/>
-        <Label Content="到期日" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,294,0,0"/>
-        <Label Content="卡號" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,246,0,0"/>
+        <Viewbox Height="368" Width="500" Margin="257,45,43,36.6" Stretch="Fill">
+
+            <Grid Height="368" Width="500">
+                <Border HorizontalAlignment="Center" Height="260" VerticalAlignment="Center" Width="500" Margin="0,108,0,0" BorderThickness="6" CornerRadius="10" BorderBrush="#FFDEDEDE" Background="#FFDEDEDE" Opacity="0.9"/>
+
+                <TextBox x:Name="Cvv" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" Text="CVV" VerticalAlignment="Center" Width="107" Margin="86,291,307,51"/>
+                <Button Content="下一步" HorizontalAlignment="Center" VerticalAlignment="Center" Width="66" Margin="390,320,44,23" Height="23" Click="Button_Click"/>
+                <TextBox x:Name="Validthur" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" Text="月/年" VerticalAlignment="Center" Width="107" Margin="86,243,307,99"/>
+                <TextBox x:Name="name1" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="姓名" VerticalAlignment="Center" Width="107" Margin="86,148,307,194"/>
+                <TextBox x:Name="CreadeCardId" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" Text="卡號" VerticalAlignment="Center" Width="251" Margin="86,195,163,147"/>
+                <Image HorizontalAlignment="Center" Height="83" VerticalAlignment="Center" Width="120" Margin="180,10,200,275" Source="/AirTicket;component/images/mastercard.png" />
+                <Image HorizontalAlignment="Center" Height="83" VerticalAlignment="Center" Width="120" Margin="30,10,350,275" Source="/AirTicket;component/images/visa.png" />
+                <Image HorizontalAlignment="Center" Height="83" VerticalAlignment="Center" Width="120" Margin="336,10,44,275" Source="/AirTicket;component/images/amex.png" />
+                <Button Content="上一步" HorizontalAlignment="Center" VerticalAlignment="Center" Width="66" Margin="302,320,132,23" Height="23"/>
+                <Label Content="持卡人" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,149,0,0"/>
+                <Label Content="安全碼" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,291,0,0"/>
+                <RadioButton x:Name="Visa" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,53,0,0"/>
+                <RadioButton x:Name="MasterCard" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="171,53,0,0"/>
+                <RadioButton x:Name="Amex" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="324,53,0,0"/>
+                <Label Content="到期日" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,243,0,0"/>
+                <Label Content="卡號" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,195,0,0"/>
+                <Button Content="DEMO" Margin="229,320,221,23" Click="Button_Click_1" Width="50" Height="25"/>
+
+            </Grid>
+
+        </Viewbox>
+
     </Grid>
 </UserControl>

@@ -15,7 +15,7 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/AirNewUI;component/images/602.jpg"/>
+            <ImageBrush ImageSource="/AirTicket;component/images/602.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="161*"/>

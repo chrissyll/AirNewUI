@@ -1,4 +1,4 @@
-﻿using AirNewUI;
+﻿using AirTicket;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -26,7 +26,7 @@ namespace AirTicket.TabViews
     public partial class RegisterUserControl
     {
         MetroWindow window;
-        AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
+        AirEntities dbContext = new AirEntities();
 
         public RegisterUserControl()
         {

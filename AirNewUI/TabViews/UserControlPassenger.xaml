@@ -4,31 +4,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AirTicket"
-             mc:Ignorable="d" Height="265" Width="602">
-    <Viewbox Stretch="Fill">
-        <Grid Height="319" Width="800" Background="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="63*"/>
-                <RowDefinition Height="253*"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label Name="Passanger1" FontSize="30" Content="Label" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Width="122" Height="47"/>
-            <Label Content="護照編號 :" FontSize="20" HorizontalAlignment="Left" Margin="23,44,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="100"/>
-            <TextBox Name="PassPortid" FontSize="20" HorizontalAlignment="Left" Height="23" Margin="129,50,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <Label Content="姓 :" FontSize="20" HorizontalAlignment="Left" Margin="306,44,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="40"/>
-            <TextBox Name="Firstname" FontSize="20" HorizontalAlignment="Left" Height="23" Margin="402,50,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <Label Content="名 :" FontSize="20" HorizontalAlignment="Left" Margin="569,44,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="40"/>
-            <TextBox Name="Lastname" FontSize="20" HorizontalAlignment="Left" Height="23" Margin="661,50,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <ComboBox Name="combox1"  HorizontalAlignment="Left" Margin="129,117,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="21">
-                <ComboBoxItem Content="男" />
-                <ComboBoxItem Content="女" />
-            </ComboBox>
-            <Label Content="性別 :" FontSize="20" HorizontalAlignment="Left" Margin="23,110,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="60"/>
-            <Label Content="出生年月日 :" FontSize="20" HorizontalAlignment="Left" Margin="271,109,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="120"/>
-            <DatePicker Name="Mybirthday" HorizontalAlignment="Left" Margin="402,114,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="24"/>
-            <Label Content="護照到期日 :" FontSize="20" HorizontalAlignment="Left" Margin="530,109,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="120"/>
-            <DatePicker Name="Passportenddate" HorizontalAlignment="Left" Margin="661,114,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="24"/>
+             mc:Ignorable="d"
+             d:DesignHeight="220" d:DesignWidth="800">
 
-        </Grid>
-    </Viewbox>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="253*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="Passanger1" FontSize="22" Content="Label" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Width="108" Height="41"/>
+        <Label Content="護照編號 :" FontSize="16" HorizontalAlignment="Left" Margin="13,13,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Width="91"/>
+        <TextBox Name="PassPortid" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="97,13,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109"/>
+        <Label Content="姓 :" FontSize="16" HorizontalAlignment="Left" Margin="273,13,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Width="35"/>
+        <TextBox Name="Firstname" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="310,13,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109"/>
+        <Label Content="名 :" FontSize="16" HorizontalAlignment="Left" Margin="487,13,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Width="36"/>
+        <TextBox Name="Lastname" FontSize="16" HorizontalAlignment="Left" Height="23" Margin="523,13,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="110"/>
+        <ComboBox Name="combox1"  HorizontalAlignment="Left" Margin="96,63,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Height="23">
+            <ComboBoxItem Content="男" />
+            <ComboBoxItem Content="女" />
+        </ComboBox>
+        <Label Content="性別 :" FontSize="16" HorizontalAlignment="Left" Margin="13,63,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Width="55"/>
+        <Label Content="出生年月日 :" FontSize="16" HorizontalAlignment="Left" Margin="212,63,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Width="110"/>
+        <DatePicker Name="Mybirthday" HorizontalAlignment="Left" Margin="310,63,0,0" Grid.Row="1" VerticalAlignment="Top" Width="109" Height="23"/>
+        <Label Content="護照到期日 :" FontSize="16" HorizontalAlignment="Left" Margin="425,63,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Width="109"/>
+        <DatePicker Name="Passportenddate" HorizontalAlignment="Left" Margin="523,63,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Height="23"/>
+
+    </Grid>
+
 </UserControl>

@@ -25,7 +25,7 @@ namespace AirTicket
             //datagrid1.FrozenColumnCount = 1;
         }
 
-        AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
+        AirEntities dbContext = new AirEntities();
         // 會員管理
         private void Button_Click(object sender, RoutedEventArgs e)
         {

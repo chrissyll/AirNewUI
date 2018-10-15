@@ -23,7 +23,7 @@ namespace AirTicket.TabViews
     public partial class LoginUserControl
     {
         MetroWindow window;
-        AirNewUI.AirEntities dbContext = new AirNewUI.AirEntities();
+        AirEntities dbContext = new AirEntities();
 
         public LoginUserControl()
         {
