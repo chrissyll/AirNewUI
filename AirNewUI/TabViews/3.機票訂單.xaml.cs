@@ -105,23 +105,30 @@ namespace AirTicket
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-        //    var result = from o in this.DbContext.Orders
-        //                 join a in this.DbContext.Airlines on o.Airline_ID equals a.Airline_ID
-        //                 join f in this.DbContext.Flights on o.Flight_ID equals f.Flight_ID
-        //                 join ap in this.DbContext.Airports on o.Arrival_Airport_ID equals ap.Airport_ID
-        //                 join c in this.DbContext.Cabins on o.Cabin_ID equals c.Cabin_ID
-        //                 join p in this.DbContext.Passengers on o.Ticket_ID equals p.Ticket_ID                         
-        //                 select new { 訂單編號 = o.Ticket_ID, 航空公司 = o.Airline.Airline_Name, 出發地 = o.Airport.Airport_Name, 目的地 = o.Airport1.Airport_Name, 艙等 = o.Cabin.Cabin_Name, 出發時間 = o.Departure_Time, 抵達時間 = o.Arrival_Time, 直飛或轉機 = o.NonStop, 會員編號 = o.Member_ID, 訂單日期 = o.Order_Time, 付款方式 = o.Payment ,乘客=p.Order.Ticket_ID };
+           
+            //todo 刪除訂單
+            //var result = from o in this.DbContext.Orders
+            //             join a in this.DbContext.Airlines on o.Airline_ID equals a.Airline_ID
+            //             join f in this.DbContext.Flights on o.Flight_ID equals f.Flight_ID
+            //             join ap in this.DbContext.Airports on o.Arrival_Airport_ID equals ap.Airport_ID
+            //             join c in this.DbContext.Cabins on o.Cabin_ID equals c.Cabin_ID
+            //             join p in this.DbContext.Passengers on o.Ticket_ID equals p.Ticket_ID
+            //             select new { 訂單編號 = o.Ticket_ID, 航空公司 = o.Airline.Airline_Name, 出發地 = o.Airport.Airport_Name, 目的地 = o.Airport1.Airport_Name, 艙等 = o.Cabin.Cabin_Name, 出發時間 = o.Departure_Time, 抵達時間 = o.Arrival_Time, 直飛或轉機 = o.NonStop, 會員編號 = o.Member_ID, 訂單日期 = o.Order_Time, 付款方式 = o.Payment, 乘客 = p.Order.Ticket_ID };
 
 
-        //    if (this.DataGrid1.SelectedItem == null)
-        //    {
-        //        MessageBox.Show("無法刪除空白");
-        //    }
-        //    else
-        //    {
-        //       DbContext.
-        //    }
+            //if (this.DataGrid1.SelectedItem == null)
+            //{
+            //    MessageBox.Show("無法刪除空白");
+            //}
+            //else
+            //{
+
+            //  DataGrid1.Items.Remove(DataGrid1.SelectedItem);
+               
+                
+
+
+            //}
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AirTicket;
+using AirTicket.TabViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace AirTicket
             this.listboxtime2.Content = "抵達時間 :" + this.getCard.getPassenger.getTicket.time2;
             this.listboxcabin.Content = "艙等 :" + this.getCard.getPassenger.getTicket.cabin;
             this.listboxnum.Content = "乘客數 :" + this.getCard.getPassenger.getTicket.num;
-            this.listboxprice.Content = "價錢 : NT"+ this.getCard.getPassenger.getTicket.price +"/位" ;
+            this.listboxprice.Content = "價錢 : NT "+ this.getCard.getPassenger.getTicket.price +"/位" ;
 
 
             for (int i = 0; i < getCard.getPassenger.getTicket.num; i++)
@@ -84,6 +85,11 @@ namespace AirTicket
                         where o.Cabin_Name == this.getCard.getPassenger.getTicket.cabin
                         select o.Cabin_ID).FirstOrDefault();
 
+            //string user_account = LoginUserControl.UserName;
+            var user_id = (from o in DbContext.Members
+                           where o.Member_Account == LoginUserControl.UserName
+                           select o.Member_ID).FirstOrDefault();
+
 
             DateTime parsedDT = DateTime.Parse(this.getCard.getPassenger.getTicket.time1);
             DateTime parsedAT = DateTime.Parse(this.getCard.getPassenger.getTicket.time2);
@@ -95,8 +101,8 @@ namespace AirTicket
             order1.Arrival_Airport_ID = arrival_airport_id;
             order1.Arrival_Time = parsedAT;
             order1.Cabin_ID = cabin;
-            //todo 登入者ID
-            //order1.Member_ID = ;
+            
+            order1.Member_ID = user_id;
             order1.Payment = this.getCard.comboxCard;
             order1.NonStop = "直飛";
             order1.Order_Time = DateTime.Now;

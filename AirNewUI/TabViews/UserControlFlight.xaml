@@ -28,8 +28,8 @@
             <Label Content="抵達" FontSize="20" HorizontalAlignment="Left" Margin="322,12,0,0" Grid.Row="1" VerticalAlignment="Top" Height="40" Width="57"/>
             <Label Name="Cabin1" Content="頭等艙" FontSize="20" HorizontalAlignment="Left" Margin="484,12,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="116"/>
             <Label Name="Cabin2" Content="經濟艙" FontSize="20" HorizontalAlignment="Left" Margin="639,12,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="116"/>
-            <Button Name="button1" Content="Button"  HorizontalAlignment="Left" Margin="484,8.8,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" Height="89" Background="{x:Null}"/>
-            <Button Name="button2" Content="Button" HorizontalAlignment="Left" Margin="631,7.8,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" Height="89" Background="{x:Null}"/>
+            <Button Name="button1" Content="Button" Style="{StaticResource AccentedSquareButtonStyle}"  HorizontalAlignment="Left" Margin="484,8.8,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" Height="89" />
+            <Button Name="button2" Content="Button" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="631,7.8,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" Height="89" />
             <Label x:Name="Departure_Airport_lab" Content="Label" FontSize="14" HorizontalAlignment="Left" Margin="10,8.8,0,0" Grid.Row="2" VerticalAlignment="Top" />
             <Label x:Name="Time1" Content="Label" FontSize="14" HorizontalAlignment="Left" Margin="10,66.8,0,0" Grid.Row="2" VerticalAlignment="Top" />
             <Label x:Name="Duration" Content="Label" FontSize="14" HorizontalAlignment="Left" Margin="166,9.8,0,0" Grid.Row="2" VerticalAlignment="Top"/>
