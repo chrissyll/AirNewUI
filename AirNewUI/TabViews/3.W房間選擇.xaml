@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="AirTicket.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirTicket"
+        mc:Ignorable="d"
+         Height="600.371" Width="800">
+    <ScrollViewer>
+        <StackPanel >
+            <local:房間2/>
+            <local:房間/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

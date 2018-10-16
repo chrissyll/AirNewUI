@@ -232,14 +232,20 @@
                                 <local:搜尋機票 />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
-                        
+
+                        <Controls:HamburgerMenuIconItem x:Name="SearchHotelTab" Icon="{iconPacks:Material Kind=City}" Label="搜尋飯店">
+                            <Controls:HamburgerMenuIconItem.Tag >
+                                <local:Window1 />
+                            </Controls:HamburgerMenuIconItem.Tag>
+                        </Controls:HamburgerMenuIconItem>
+
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Car}" Label="Private">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <TabViews:LoginUserControl />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
 
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=City}" Label="Briefcase">
+                        <Controls:HamburgerMenuIconItem  Icon="{iconPacks:Material Kind=City}" Label="Briefcase">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <UserControl>
                                     <StackPanel Orientation="Vertical">

@@ -18,6 +18,7 @@ namespace AirTicket
         public Member()
         {
             this.MemberViewDetails = new HashSet<MemberViewDetail>();
+            this.HotelOrders = new HashSet<HotelOrder>();
         }
     
         public int Member_ID { get; set; }
@@ -35,5 +36,7 @@ namespace AirTicket
         public virtual Country Country { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MemberViewDetail> MemberViewDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HotelOrder> HotelOrders { get; set; }
     }
 }

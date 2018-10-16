@@ -53,6 +53,10 @@ namespace AirTicket
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<CountryCityAirport> CountryCityAirports { get; set; }
         public virtual DbSet<FlightSeat> FlightSeats { get; set; }
+        public virtual DbSet<HOTEL> HOTELs { get; set; }
+        public virtual DbSet<Hotel_Order_Detail> Hotel_Order_Detail { get; set; }
+        public virtual DbSet<HotelOrder> HotelOrders { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

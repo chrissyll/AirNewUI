@@ -61,6 +61,15 @@
         <AssociationConnector Association="AirModel.FK_Order_Cabin" />
         <AssociationConnector Association="AirModel.FK_car_category" />
         <AssociationConnector Association="AirModel.FK_CarImage_car" />
+        <EntityTypeShape EntityType="AirModel.HOTEL" Width="1.5" PointX="5.25" PointY="22.625" />
+        <EntityTypeShape EntityType="AirModel.Hotel_Order_Detail" Width="1.5" PointX="14.75" PointY="18.125" />
+        <EntityTypeShape EntityType="AirModel.HotelOrder" Width="1.5" PointX="12.5" PointY="17.5" />
+        <EntityTypeShape EntityType="AirModel.Room" Width="1.5" PointX="7.5" PointY="27.5" />
+        <AssociationConnector Association="AirModel.FK_HOTEL_City" />
+        <AssociationConnector Association="AirModel.FK_HotelOrder_HOTEL" />
+        <AssociationConnector Association="AirModel.FK_Room_HOTEL" />
+        <AssociationConnector Association="AirModel.FK_Hotel_Order_Detail_HotelOrder" />
+        <AssociationConnector Association="AirModel.FK_HotelOrder_Member" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

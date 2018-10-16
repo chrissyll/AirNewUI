@@ -12,26 +12,26 @@ namespace AirTicket
     using System;
     using System.Collections.Generic;
     
-    public partial class City
+    public partial class HOTEL
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public City()
+        public HOTEL()
         {
-            this.Airports = new HashSet<Airport>();
-            this.CountryCityAirports = new HashSet<CountryCityAirport>();
-            this.HOTELs = new HashSet<HOTEL>();
+            this.HotelOrders = new HashSet<HotelOrder>();
+            this.Rooms = new HashSet<Room>();
         }
     
-        public int City_ID { get; set; }
+        public int Hotel_ID { get; set; }
+        public int City_id { get; set; }
         public string City_Name { get; set; }
-        public Nullable<int> Country_ID { get; set; }
+        public string Hotel_Name { get; set; }
+        public int Hotel_Level { get; set; }
+        public string Hotel_Category { get; set; }
     
+        public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Airport> Airports { get; set; }
-        public virtual Country Country { get; set; }
+        public virtual ICollection<HotelOrder> HotelOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CountryCityAirport> CountryCityAirports { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOTEL> HOTELs { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
     }
 }

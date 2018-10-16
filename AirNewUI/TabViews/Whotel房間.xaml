@@ -1,0 +1,50 @@
+﻿<Window x:Class="AirTicket._3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirTicket"
+        mc:Ignorable="d"
+        Title="W-Hotel" Height="450" Width="800" FontWeight="Bold">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="181*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="136*"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="118*"/>
+
+            <ColumnDefinition Width="150*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="房型" Margin="95,16,50,5" FontSize="22" FontWeight="Bold"/>
+        <Border  BorderThickness="5" BorderBrush="AliceBlue" HorizontalAlignment="Left" Height="185" Margin="10,6,0,0" VerticalAlignment="Top" Width="248" Grid.Row="1" >
+            <Image Source="飯店照片/w/房間照片1.jpg" Stretch="Fill" Margin="0.2,0.2,-4,-5.8"/>
+        </Border>
+        <Rectangle Fill="#FFF4F4F5" Height="7" Margin="0,52,5,0" Stroke="Black" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <Label Name="房間名稱" Content="奇妙特大號床間" HorizontalAlignment="Left" Margin="10,191,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="30" Width="135"/>
+        <Label Content="床型選擇" HorizontalAlignment="Left" Margin="25,226,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Height="31" Width="76"/>
+        <Label Content="1 張特大雙人床" HorizontalAlignment="Left" Margin="39,262,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Height="36" Width="134"/>
+        <Label Content="選項" Grid.Column="1" Margin="39,13,0,10" FontSize="22" FontWeight="Bold" Width="64" RenderTransformOrigin="0.318,0.453" HorizontalAlignment="Left"/>
+        <Label Content="免費無線上網" FontSize="14" FontWeight="Bold" Grid.Column="1" Margin="39,15,0,312" Grid.Row="1" RenderTransformOrigin="0.794,0.409"/>
+        <Label  Content="免費早餐" FontSize="14" FontWeight="Bold" Margin="39,49,33,277" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.617,1.135"/>
+        <Label  Content="浴缸" FontSize="14" FontWeight="Bold" Margin="44,87,46,239" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.617,1.135"/>
+        <Label  Content="景觀" FontSize="14" FontWeight="Bold" Margin="44,122,46,204" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.617,1.135"/>
+        <Label  Content="獨立衛浴" FontSize="14" FontWeight="Bold" Margin="44,156,10,170" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.617,1.135"/>
+        <Label Content="每晚價格" Grid.Column="3" Margin="10,13,0,10" FontSize="22" FontWeight="Bold" Width="113" RenderTransformOrigin="0.318,0.453" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <Button Content="訂房" Grid.Column="4" HorizontalAlignment="Left" Margin="11,14,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" Height="59" FontSize="18" Click="Button_Click"/>
+        <Label Name="price" Content="TWD$10,280" Grid.Column="3" HorizontalAlignment="Left" Margin="0,15,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="129" FontSize="18" FontWeight="Bold" Background="Transparent" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Column="1" Margin="3,10,16,141" Orientation="Vertical" Grid.Row="1">
+            <Image Margin="3" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="27" Source="icon/wifi.png"/>
+            <Image Margin="3" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="27" Source="icon/coffee-cup.png" RenderTransformOrigin="1.014,-2.283"/>
+            <Image Margin="3" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="27" Source="icon/bathtub.png" RenderTransformOrigin="1.014,-2.283"/>
+            <Image Margin="3" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="27" Source="icon/eye.png" RenderTransformOrigin="1.014,-2.283"/>
+            <Image Margin="3" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="27" Source="icon/shower.png" RenderTransformOrigin="1.014,-2.283"/>
+        </StackPanel>
+        <Label Content="適合人數" Grid.Column="2" Margin="10,13,0,10" FontSize="22" FontWeight="Bold" Width="106" RenderTransformOrigin="0.318,0.453" HorizontalAlignment="Left"/>
+        <Image Margin="20,15,0,0" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="27" Source="icon/multiple-users-silhouette.png" Grid.Column="2" Grid.Row="1" RenderTransformOrigin="1.265,0.531"/>
+        <Label  Content="2人" FontSize="14" FontWeight="Bold" Margin="47,15,10,311" Grid.Column="2" Grid.Row="1" RenderTransformOrigin="0.617,1.135"/>
+    </Grid>
+</Window>

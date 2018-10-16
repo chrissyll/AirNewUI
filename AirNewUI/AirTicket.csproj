@@ -151,17 +151,50 @@
     <Compile Include="FlightSeat.cs">
       <DependentUpon>AirModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="HOTEL.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelOrder.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel_Order_Detail.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="LogInWindow.xaml.cs">
       <DependentUpon>LogInWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow_Lab.xaml.cs">
       <DependentUpon>MainWindow_Lab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Room.cs">
+      <DependentUpon>AirModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\1.搜尋飯店.xaml.cs">
+      <DependentUpon>1.搜尋飯店.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\2.1WHOTEL.xaml.cs">
+      <DependentUpon>2.1WHOTEL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\2.飯店類別.xaml.cs">
+      <DependentUpon>2.飯店類別.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\3.W房間選擇.xaml.cs">
+      <DependentUpon>3.W房間選擇.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TabViews\3.機票訂單.xaml.cs">
       <DependentUpon>3.機票訂單.xaml</DependentUpon>
     </Compile>
     <Compile Include="TabViews\4.搜尋機票.xaml.cs">
       <DependentUpon>4.搜尋機票.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\4.飯店訂單.xaml.cs">
+      <DependentUpon>4.飯店訂單.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\9.1房間.xaml.cs">
+      <DependentUpon>9.1房間.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\9.2房間2.xaml.cs">
+      <DependentUpon>9.2房間2.xaml</DependentUpon>
     </Compile>
     <Compile Include="TabViews\RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
@@ -196,6 +229,9 @@
     <Compile Include="TabViews\信用卡結帳.xaml.cs">
       <DependentUpon>信用卡結帳.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TabViews\寒舍艾麗酒店.xaml.cs">
+      <DependentUpon>寒舍艾麗酒店.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TabViews\旅客資料填寫.xaml.cs">
       <DependentUpon>旅客資料填寫.xaml</DependentUpon>
     </Compile>
@@ -204,6 +240,9 @@
     </Compile>
     <Compile Include="TabViews\機票訂單確認.xaml.cs">
       <DependentUpon>機票訂單確認.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabViews\艾爾行旅.xaml.cs">
+      <DependentUpon>艾爾行旅.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Tools.cs" />
     <Compile Include="View.cs">
@@ -224,11 +263,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TabViews\1.搜尋飯店.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="TabViews\2.1WHOTEL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\2.飯店類別.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\3.W房間選擇.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TabViews\3.機票訂單.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TabViews\4.搜尋機票.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\4.飯店訂單.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\9.1房間.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\9.2房間2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -274,6 +341,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TabViews\寒舍艾麗酒店.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TabViews\旅客資料填寫.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -283,6 +354,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TabViews\機票訂單確認.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TabViews\艾爾行旅.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -332,6 +407,35 @@
       <DependentUpon>AirModel1.edmx</DependentUpon>
       <LastGenOutput>AirModel1.cs</LastGenOutput>
     </Content>
+    <Resource Include="HotelImgs\w\155441528.jpg" />
+    <Resource Include="HotelImgs\w\w.jpg" />
+    <Resource Include="HotelImgs\w\房間照片.jpg" />
+    <Resource Include="HotelImgs\w\房間照片1.jpg" />
+    <Resource Include="HotelImgs\w\房間照片2.jpg" />
+    <Resource Include="HotelImgs\w\房間照片3.jpg" />
+    <Resource Include="HotelImgs\w\非凡.jpg" />
+    <Resource Include="HotelImgs\w\非凡2.jpg" />
+    <Resource Include="HotelImgs\bus.png" />
+    <Resource Include="HotelImgs\star.png" />
+    <Resource Include="HotelImgs\bathtub.png" />
+    <Resource Include="HotelImgs\coffee-cup.png" />
+    <Resource Include="HotelImgs\dumbbell.png" />
+    <Resource Include="HotelImgs\exchange.png" />
+    <Resource Include="HotelImgs\eye.png" />
+    <Resource Include="HotelImgs\flowers-pot-of-yard.png" />
+    <Resource Include="HotelImgs\map-pin-marked.png" />
+    <Resource Include="HotelImgs\massage-spa-body-treatment.png" />
+    <Resource Include="HotelImgs\multiple-users-silhouette.png" />
+    <Resource Include="HotelImgs\old-fashion-briefcase %282%29.png" />
+    <Resource Include="HotelImgs\restaurant.png" />
+    <Resource Include="HotelImgs\shower.png" />
+    <Resource Include="HotelImgs\swimmer.png" />
+    <Resource Include="HotelImgs\wifi.png" />
+    <Resource Include="HotelImgs\worker.png" />
+    <Resource Include="HotelImgs\寒舍艾利.jpg" />
+    <Resource Include="HotelImgs\寒舍艾利床.jpg" />
+    <Resource Include="HotelImgs\寒舍艾利豪華雙人.jpg" />
+    <Resource Include="HotelImgs\艾爾行旅.jpg" />
     <Resource Include="images\user0.png" />
     <Resource Include="images\Background4.jpg" />
     <Resource Include="images\BackGround5.jpg" />

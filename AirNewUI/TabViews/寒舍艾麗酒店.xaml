@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="AirTicket.寒舍艾麗酒店"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AirTicket"
+             mc:Ignorable="d" d:DesignWidth="800" Height="260">
+    <Grid>
+        <Viewbox Stretch="Fill">
+            <Grid Height="232" Width="800" Background="White">
+                <Label Content="台北W-Hotel" FontSize="20" FontWeight="Bold" Margin="281,9.6,377,406.4"/>
+                <Image HorizontalAlignment="Left" Height="39" Margin="297,43,0,0" VerticalAlignment="Top" Width="26" Source="/AirTicket;component/HotelImgs/map-pin-marked.png" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30" Margin="422,10,0,0" VerticalAlignment="Top" Width="121">
+                    <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Source="/AirTicket;component/HotelImgs/star.png"/>
+                    <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Source="/AirTicket;component/HotelImgs/star.png" RenderTransformOrigin="1.042,0.438"/>
+                    <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Source="/AirTicket;component/HotelImgs/star.png" RenderTransformOrigin="1.042,0.438"/>
+                    <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Source="/AirTicket;component/HotelImgs/star.png" RenderTransformOrigin="2.575,-0.312"/>
+                    <Image HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Source="/AirTicket;component/HotelImgs/star.png" RenderTransformOrigin="0.975,0.038"/>
+                </StackPanel>
+                <Button Content="查看房間" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Height="49" FontSize="18" Margin="619.2,144,0,0"/>
+                <Label Content="台北寒舍艾利" FontSize="20" FontWeight="Bold" Margin="284,10,375,138"/>
+                <Border  BorderThickness="10" BorderBrush="White" HorizontalAlignment="Left" Height="192" Margin="10,15,0,0" VerticalAlignment="Top" Width="269" Background="White" >
+                    <Image  Stretch="Fill" Margin="0.4,0.4,0.4,-0.4" Source="/AirTicket;component/HotelImgs/寒舍艾利.jpg"/>
+                </Border>
+                <Label Content="台北信義區松高路18號" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="30" Width="214" Margin="324,44,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="49" Margin="284,158,0,0" VerticalAlignment="Top" Width="301">
+                    <Image Margin="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="30" Source="/AirTicket;component/HotelImgs/wifi.png" RenderTransformOrigin="1.042,0.438"/>
+                    <Image Margin="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="30" Source="/AirTicket;component/HotelImgs/swimmer.png" RenderTransformOrigin="1.042,0.438"/>
+                    <Image  Margin="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="30" Source="/AirTicket;component/HotelImgs/restaurant.png" RenderTransformOrigin="0.975,0.038"/>
+                    <Image Margin="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="30" Source="/AirTicket;component/HotelImgs/worker.png" RenderTransformOrigin="2.575,-0.312"/>
+                    <Image Margin="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="30" Source="/AirTicket;component/HotelImgs/flowers-pot-of-yard.png" RenderTransformOrigin="2.575,-0.312"/>
+                    <Image Margin="3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="30" Source="/AirTicket;component/HotelImgs/dumbbell.png" RenderTransformOrigin="2.575,-0.312"/>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

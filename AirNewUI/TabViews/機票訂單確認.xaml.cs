@@ -1,5 +1,6 @@
 ﻿using AirTicket;
 using AirTicket.TabViews;
+using AirTicket.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,7 +88,7 @@ namespace AirTicket
 
             //string user_account = LoginUserControl.UserName;
             var user_id = (from o in DbContext.Members
-                           where o.Member_Account == LoginUserControl.UserName
+                           where o.Member_Account == Tools.UserName
                            select o.Member_ID).FirstOrDefault();
 
 

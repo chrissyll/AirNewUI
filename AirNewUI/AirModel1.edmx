@@ -185,6 +185,49 @@
           <Property Name="Seat_ID" Type="nvarchar" MaxLength="10" />
           <Property Name="Seat_TF" Type="bit" />
         </EntityType>
+        <EntityType Name="HOTEL">
+          <Key>
+            <PropertyRef Name="Hotel_ID" />
+          </Key>
+          <Property Name="Hotel_ID" Type="int" Nullable="false" />
+          <Property Name="City_id" Type="int" Nullable="false" />
+          <Property Name="City_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Hotel_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Hotel_Level" Type="int" Nullable="false" />
+          <Property Name="Hotel_Category" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hotel_Order_Detail">
+          <Key>
+            <PropertyRef Name="Detail_ID" />
+          </Key>
+          <Property Name="Order _ID" Type="int" />
+          <Property Name="Hotel_ID" Type="int" />
+          <Property Name="Room_Id" Type="int" />
+          <Property Name="Room_Category" Type="nvarchar" MaxLength="10" />
+          <Property Name="Room_Quantity" Type="int" />
+          <Property Name="Check_In_Date" Type="date" />
+          <Property Name="Check-Out_Date" Type="date" />
+          <Property Name="Food" Type="bit" />
+          <Property Name="Detail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HotelOrder">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Hotel_ID" Type="int" />
+          <Property Name="Hotel_Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Order_Date" Type="date" />
+          <Property Name="Member_ID" Type="int" />
+          <Property Name="Member _Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Member _Gender" Type="char" MaxLength="2" />
+          <Property Name="Member _Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Member _En_FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Member _En_LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Living_Number_of_people" Type="int" />
+          <Property Name="CashMethod" Type="nvarchar" MaxLength="10" />
+          <Property Name="Total_Price" Type="int" />
+        </EntityType>
         <EntityType Name="Member">
           <Key>
             <PropertyRef Name="Member_ID" />
@@ -252,6 +295,18 @@
           <Property Name="Death_Of_Expiry" Type="datetime" />
           <Property Name="Death_Of_Birth" Type="datetime" />
           <Property Name="Passenger_Type" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="Hotel_ID" />
+            <PropertyRef Name="Room_Id" />
+          </Key>
+          <Property Name="Hotel_ID" Type="int" Nullable="false" />
+          <Property Name="Room_Id" Type="int" Nullable="false" />
+          <Property Name="Room_Category" Type="nvarchar" MaxLength="10" />
+          <Property Name="Room_Quantity" Type="int" />
+          <Property Name="Bed_Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="Uniprice" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -497,6 +552,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_HOTEL_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="HOTEL" Type="Self.HOTEL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="City_ID" />
+            </Principal>
+            <Dependent Role="HOTEL">
+              <PropertyRef Name="City_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hotel_Order_Detail_HotelOrder">
+          <End Role="HotelOrder" Type="Self.HotelOrder" Multiplicity="0..1" />
+          <End Role="Hotel_Order_Detail" Type="Self.Hotel_Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HotelOrder">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Hotel_Order_Detail">
+              <PropertyRef Name="Order _ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrder_HOTEL">
+          <End Role="HOTEL" Type="Self.HOTEL" Multiplicity="0..1" />
+          <End Role="HotelOrder" Type="Self.HotelOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOTEL">
+              <PropertyRef Name="Hotel_ID" />
+            </Principal>
+            <Dependent Role="HotelOrder">
+              <PropertyRef Name="Hotel_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrder_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="HotelOrder" Type="Self.HotelOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="HotelOrder">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Member_Country">
           <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
           <End Role="Member" Type="Self.Member" Multiplicity="*" />
@@ -617,6 +720,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Room_HOTEL">
+          <End Role="HOTEL" Type="Self.HOTEL" Multiplicity="1" />
+          <End Role="Room" Type="Self.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOTEL">
+              <PropertyRef Name="Hotel_ID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="Hotel_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_View_Area">
           <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
           <End Role="View" Type="Self.View" Multiplicity="*" />
@@ -687,11 +802,15 @@
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Flight" EntityType="Self.Flight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOTEL" EntityType="Self.HOTEL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotel_Order_Detail" EntityType="Self.Hotel_Order_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotelOrder" EntityType="Self.HotelOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MemberPhoto" EntityType="Self.MemberPhoto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MemberViewDetail" EntityType="Self.MemberViewDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Passenger" EntityType="Self.Passenger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ViewPhoto" EntityType="Self.ViewPhoto" Schema="dbo" store:Type="Tables" />
@@ -797,6 +916,22 @@
             <End Role="Flight" EntitySet="Flight" />
             <End Role="FlightSeat" EntitySet="FlightSeat" />
           </AssociationSet>
+          <AssociationSet Name="FK_HOTEL_City" Association="Self.FK_HOTEL_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="HOTEL" EntitySet="HOTEL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hotel_Order_Detail_HotelOrder" Association="Self.FK_Hotel_Order_Detail_HotelOrder">
+            <End Role="HotelOrder" EntitySet="HotelOrder" />
+            <End Role="Hotel_Order_Detail" EntitySet="Hotel_Order_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrder_HOTEL" Association="Self.FK_HotelOrder_HOTEL">
+            <End Role="HOTEL" EntitySet="HOTEL" />
+            <End Role="HotelOrder" EntitySet="HotelOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrder_Member" Association="Self.FK_HotelOrder_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="HotelOrder" EntitySet="HotelOrder" />
+          </AssociationSet>
           <AssociationSet Name="FK_Member_Country" Association="Self.FK_Member_Country">
             <End Role="Country" EntitySet="Country" />
             <End Role="Member" EntitySet="Member" />
@@ -836,6 +971,10 @@
           <AssociationSet Name="FK_Passenger_Order" Association="Self.FK_Passenger_Order">
             <End Role="Order" EntitySet="Order" />
             <End Role="Passenger" EntitySet="Passenger" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Room_HOTEL" Association="Self.FK_Room_HOTEL">
+            <End Role="HOTEL" EntitySet="HOTEL" />
+            <End Role="Room" EntitySet="Room" />
           </AssociationSet>
           <AssociationSet Name="FK_View_Area" Association="Self.FK_View_Area">
             <End Role="Area" EntitySet="Area" />
@@ -974,6 +1113,7 @@
           <NavigationProperty Name="Airports" Relationship="Self.FK_Airport_City" FromRole="City" ToRole="Airport" />
           <NavigationProperty Name="Country" Relationship="Self.FK_City_Country" FromRole="City" ToRole="Country" />
           <NavigationProperty Name="CountryCityAirports" Relationship="Self.FK_CountryCityAirport_City" FromRole="City" ToRole="CountryCityAirport" />
+          <NavigationProperty Name="HOTELs" Relationship="AirModel.FK_HOTEL_City" FromRole="City" ToRole="HOTEL" />
         </EntityType>
         <EntityType Name="Commerical">
           <Key>
@@ -1042,6 +1182,7 @@
           <Property Name="Country_ID" Type="Int32" />
           <NavigationProperty Name="Country" Relationship="Self.FK_Member_Country" FromRole="Member" ToRole="Country" />
           <NavigationProperty Name="MemberViewDetails" Relationship="Self.FK_MemberViewDetail_Member" FromRole="Member" ToRole="MemberViewDetail" />
+          <NavigationProperty Name="HotelOrders" Relationship="AirModel.FK_HotelOrder_Member" FromRole="Member" ToRole="HotelOrder" />
         </EntityType>
         <EntityType Name="MemberPhoto">
           <Key>
@@ -1082,7 +1223,7 @@
           <Property Name="Member_ID" Type="Int32" />
           <Property Name="Insurance" Type="Boolean" />
           <Property Name="Payment" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="NonStop" Type="String" />
+          <Property Name="NonStop" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Airline" Relationship="Self.FK_Order_Airline" FromRole="Order" ToRole="Airline" />
           <NavigationProperty Name="Flight" Relationship="Self.FK_Order_Flight" FromRole="Order" ToRole="Flight" />
           <NavigationProperty Name="Passengers" Relationship="Self.FK_Passenger_Order" FromRole="Order" ToRole="Passenger" />
@@ -1631,6 +1772,30 @@
             <End Role="car" EntitySet="cars" />
             <End Role="CarImage" EntitySet="CarImages" />
           </AssociationSet>
+          <EntitySet Name="HOTELs" EntityType="AirModel.HOTEL" />
+          <EntitySet Name="Hotel_Order_Detail" EntityType="AirModel.Hotel_Order_Detail" />
+          <EntitySet Name="HotelOrders" EntityType="AirModel.HotelOrder" />
+          <EntitySet Name="Rooms" EntityType="AirModel.Room" />
+          <AssociationSet Name="FK_HOTEL_City" Association="AirModel.FK_HOTEL_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="HOTEL" EntitySet="HOTELs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrder_HOTEL" Association="AirModel.FK_HotelOrder_HOTEL">
+            <End Role="HOTEL" EntitySet="HOTELs" />
+            <End Role="HotelOrder" EntitySet="HotelOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Room_HOTEL" Association="AirModel.FK_Room_HOTEL">
+            <End Role="HOTEL" EntitySet="HOTELs" />
+            <End Role="Room" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hotel_Order_Detail_HotelOrder" Association="AirModel.FK_Hotel_Order_Detail_HotelOrder">
+            <End Role="HotelOrder" EntitySet="HotelOrders" />
+            <End Role="Hotel_Order_Detail" EntitySet="Hotel_Order_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotelOrder_Member" Association="AirModel.FK_HotelOrder_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="HotelOrder" EntitySet="HotelOrders" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_Order_Airport">
           <End Type="AirModel.Airport" Role="Airport" Multiplicity="0..1" />
@@ -1713,6 +1878,129 @@
             </Principal>
             <Dependent Role="CarImage">
               <PropertyRef Name="car_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HOTEL">
+          <Key>
+            <PropertyRef Name="Hotel_ID" />
+          </Key>
+          <Property Name="Hotel_ID" Type="Int32" Nullable="false" />
+          <Property Name="City_id" Type="Int32" Nullable="false" />
+          <Property Name="City_Name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Hotel_Name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Hotel_Level" Type="Int32" Nullable="false" />
+          <Property Name="Hotel_Category" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="City" Relationship="AirModel.FK_HOTEL_City" FromRole="HOTEL" ToRole="City" />
+          <NavigationProperty Name="HotelOrders" Relationship="AirModel.FK_HotelOrder_HOTEL" FromRole="HOTEL" ToRole="HotelOrder" />
+          <NavigationProperty Name="Rooms" Relationship="AirModel.FK_Room_HOTEL" FromRole="HOTEL" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Hotel_Order_Detail">
+          <Key>
+            <PropertyRef Name="Detail_ID" />
+          </Key>
+          <Property Name="Order__ID" Type="Int32" />
+          <Property Name="Hotel_ID" Type="Int32" />
+          <Property Name="Room_Id" Type="Int32" />
+          <Property Name="Room_Category" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Room_Quantity" Type="Int32" />
+          <Property Name="Check_In_Date" Type="DateTime" Precision="0" />
+          <Property Name="Check_Out_Date" Type="DateTime" Precision="0" />
+          <Property Name="Food" Type="Boolean" />
+          <Property Name="Detail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="HotelOrder" Relationship="AirModel.FK_Hotel_Order_Detail_HotelOrder" FromRole="Hotel_Order_Detail" ToRole="HotelOrder" />
+        </EntityType>
+        <EntityType Name="HotelOrder">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Hotel_ID" Type="Int32" />
+          <Property Name="Hotel_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Order_Date" Type="DateTime" Precision="0" />
+          <Property Name="Member_ID" Type="Int32" />
+          <Property Name="Member__Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Member__Gender" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Member__Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Member__En_FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Member__En_LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Living_Number_of_people" Type="Int32" />
+          <Property Name="CashMethod" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Price" Type="Int32" />
+          <NavigationProperty Name="HOTEL" Relationship="AirModel.FK_HotelOrder_HOTEL" FromRole="HotelOrder" ToRole="HOTEL" />
+          <NavigationProperty Name="Hotel_Order_Detail" Relationship="AirModel.FK_Hotel_Order_Detail_HotelOrder" FromRole="HotelOrder" ToRole="Hotel_Order_Detail" />
+          <NavigationProperty Name="Member" Relationship="AirModel.FK_HotelOrder_Member" FromRole="HotelOrder" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="Hotel_ID" />
+            <PropertyRef Name="Room_Id" />
+          </Key>
+          <Property Name="Hotel_ID" Type="Int32" Nullable="false" />
+          <Property Name="Room_Id" Type="Int32" Nullable="false" />
+          <Property Name="Room_Category" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Room_Quantity" Type="Int32" />
+          <Property Name="Bed_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Uniprice" Type="Int32" />
+          <NavigationProperty Name="HOTEL" Relationship="AirModel.FK_Room_HOTEL" FromRole="Room" ToRole="HOTEL" />
+        </EntityType>
+        <Association Name="FK_HOTEL_City">
+          <End Type="AirModel.City" Role="City" Multiplicity="1" />
+          <End Type="AirModel.HOTEL" Role="HOTEL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="City_ID" />
+            </Principal>
+            <Dependent Role="HOTEL">
+              <PropertyRef Name="City_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrder_HOTEL">
+          <End Type="AirModel.HOTEL" Role="HOTEL" Multiplicity="0..1" />
+          <End Type="AirModel.HotelOrder" Role="HotelOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOTEL">
+              <PropertyRef Name="Hotel_ID" />
+            </Principal>
+            <Dependent Role="HotelOrder">
+              <PropertyRef Name="Hotel_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Room_HOTEL">
+          <End Type="AirModel.HOTEL" Role="HOTEL" Multiplicity="1" />
+          <End Type="AirModel.Room" Role="Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOTEL">
+              <PropertyRef Name="Hotel_ID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="Hotel_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hotel_Order_Detail_HotelOrder">
+          <End Type="AirModel.HotelOrder" Role="HotelOrder" Multiplicity="0..1" />
+          <End Type="AirModel.Hotel_Order_Detail" Role="Hotel_Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HotelOrder">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Hotel_Order_Detail">
+              <PropertyRef Name="Order__ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotelOrder_Member">
+          <End Type="AirModel.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="AirModel.HotelOrder" Role="HotelOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="HotelOrder">
+              <PropertyRef Name="Member_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2020,6 +2308,64 @@
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="AirModel.Store.sp_helpdiagrams" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="AirModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="AirModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="HOTELs">
+            <EntityTypeMapping TypeName="AirModel.HOTEL">
+              <MappingFragment StoreEntitySet="HOTEL">
+                <ScalarProperty Name="Hotel_Category" ColumnName="Hotel_Category" />
+                <ScalarProperty Name="Hotel_Level" ColumnName="Hotel_Level" />
+                <ScalarProperty Name="Hotel_Name" ColumnName="Hotel_Name" />
+                <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+                <ScalarProperty Name="City_id" ColumnName="City_id" />
+                <ScalarProperty Name="Hotel_ID" ColumnName="Hotel_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotel_Order_Detail">
+            <EntityTypeMapping TypeName="AirModel.Hotel_Order_Detail">
+              <MappingFragment StoreEntitySet="Hotel_Order_Detail">
+                <ScalarProperty Name="Detail_ID" ColumnName="Detail_ID" />
+                <ScalarProperty Name="Food" ColumnName="Food" />
+                <ScalarProperty Name="Check_Out_Date" ColumnName="Check-Out_Date" />
+                <ScalarProperty Name="Check_In_Date" ColumnName="Check_In_Date" />
+                <ScalarProperty Name="Room_Quantity" ColumnName="Room_Quantity" />
+                <ScalarProperty Name="Room_Category" ColumnName="Room_Category" />
+                <ScalarProperty Name="Room_Id" ColumnName="Room_Id" />
+                <ScalarProperty Name="Hotel_ID" ColumnName="Hotel_ID" />
+                <ScalarProperty Name="Order__ID" ColumnName="Order _ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotelOrders">
+            <EntityTypeMapping TypeName="AirModel.HotelOrder">
+              <MappingFragment StoreEntitySet="HotelOrder">
+                <ScalarProperty Name="Total_Price" ColumnName="Total_Price" />
+                <ScalarProperty Name="CashMethod" ColumnName="CashMethod" />
+                <ScalarProperty Name="Living_Number_of_people" ColumnName="Living_Number_of_people" />
+                <ScalarProperty Name="Member__En_LastName" ColumnName="Member _En_LastName" />
+                <ScalarProperty Name="Member__En_FirstName" ColumnName="Member _En_FirstName" />
+                <ScalarProperty Name="Member__Phone" ColumnName="Member _Phone" />
+                <ScalarProperty Name="Member__Gender" ColumnName="Member _Gender" />
+                <ScalarProperty Name="Member__Email" ColumnName="Member _Email" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Hotel_Name" ColumnName="Hotel_Name" />
+                <ScalarProperty Name="Hotel_ID" ColumnName="Hotel_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="AirModel.Room">
+              <MappingFragment StoreEntitySet="Room">
+                <ScalarProperty Name="Uniprice" ColumnName="Uniprice" />
+                <ScalarProperty Name="Bed_Type" ColumnName="Bed_Type" />
+                <ScalarProperty Name="Room_Quantity" ColumnName="Room_Quantity" />
+                <ScalarProperty Name="Room_Category" ColumnName="Room_Category" />
+                <ScalarProperty Name="Room_Id" ColumnName="Room_Id" />
+                <ScalarProperty Name="Hotel_ID" ColumnName="Hotel_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
