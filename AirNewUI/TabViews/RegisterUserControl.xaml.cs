@@ -1,4 +1,5 @@
 ﻿using AirTicket;
+using AirTicket.Utilities;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -129,42 +130,70 @@ namespace AirTicket.TabViews
                 return;
             }
 
-            MailMessage msg = new MailMessage();
-            //收件者，以逗號分隔不同收件者 ex "test@gmail.com,test2@gmail.com"
-            //msg.To.Add(string.Join("email", MailList.ToArray()));
-            msg.From = new MailAddress("msit120120@gmail.com", "AirTicket Company", Encoding.UTF8);
-            msg.To.Add(Email);
-            //郵件標題 
-            msg.Subject = "[Airticket] Confirm E-mail Address";
-            //郵件標題編碼  
-            msg.SubjectEncoding = System.Text.Encoding.UTF8;
-            //郵件內容
-            msg.Body = "<p style=\"color:blue\">Welcome !!</p><p>Thanks for signing up with<strong> AirTicket!</strong></p>";
-            msg.IsBodyHtml = true;
-            msg.BodyEncoding = Encoding.UTF8;       //郵件內容編碼 
-            msg.Priority = MailPriority.Normal;     //郵件優先級 
-                                                    //建立 SmtpClient 物件 並設定 Gmail的smtp主機及Port 
-            #region 其它 Host
-            /*
-             *  outlook.com smtp.live.com port:25
-             *  yahoo smtp.mail.yahoo.com.tw port:465
-            */
-            #endregion
-            SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
-            //設定你的帳號密碼
-            MySmtp.Credentials = new System.Net.NetworkCredential("msit120120@gmail.com", "mmsit120");  //正常要加密
-            //Gmial 的 smtp 使用 SSL
-            MySmtp.EnableSsl = true;
-            MySmtp.Send(msg);
-            //啟用 低安全性應用程式存取權https://myaccount.google.com/lesssecureapps
+            Random r = new Random();
+            int passcode = 1234;
+            //passcode = r.Next(1000, 9999);
+            //var sendResult = await Tools.SendSMS(Phone, passcode.ToString());     //寄手機簡訊
 
-            ProgressDialogController controller = await window.ShowProgressAsync("AirTicket Connection", "loading......");
+            string result = "";
+            //int firstTime = 0;
+            bool IsFirstTime = true;
+            //while (passcode.ToString() != result)
+            //{
+            //    if (firstTime == 0)
+            //    {
+            //        result = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
+            //    }
+            //    else
+            //    {
+            //        result = await Tools.loginWindow.ShowInputAsync("驗證碼錯誤!", "請重新輸入: ");
+            //    }
+            //    firstTime++;
+            //}
+            while (passcode.ToString() != result)
+            {
+                if (IsFirstTime)
+                {
+                    result = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
+                }
+                else
+                {
+                    result = await Tools.loginWindow.ShowInputAsync("驗證碼錯誤!", "請重新輸入: ");
+                }
+                IsFirstTime = false;
+            }
+
+            //var result = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
+            //if (result == null)
+            //{
+            //    return;
+            //}
+            //if (passcode.ToString() != result)
+            //{
+            //    var result2 = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
+            //    if (result2 == null)
+            //    {
+            //        return;
+            //    }
+            //    if (passcode.ToString() != result2)
+            //    {
+            //        var result2 = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
+            //        if (result2 == null)
+            //        {
+            //            return;
+            //        }
+            //    }
+
+            ProgressDialogController controller = await Tools.loginWindow.ShowProgressAsync("AirTicket Connection", "loading......");
             controller.SetIndeterminate();
             await Task.Delay(2000);
             await controller.CloseAsync();
 
             dbContext.Members.Add(newMember);
             dbContext.SaveChanges();
+
+            Tools.SendEmail(Email);
+
             MessageBox.Show("加入成功");
 
             ((LogInWindow)window).Tabs.SelectedIndex = 0;
