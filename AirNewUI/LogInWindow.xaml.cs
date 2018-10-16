@@ -1,4 +1,5 @@
-﻿using MahApps.Metro;
+﻿using AirTicket.Utilities;
+using MahApps.Metro;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace AirTicket
             ThemeManager.ChangeAppStyle(this,
                             ThemeManager.GetAccent("Steel"),
                             ThemeManager.GetAppTheme("BaseLight"));
+            Tools.loginWindow = this;
         }
 
         AirEntities dbContext = new AirEntities();

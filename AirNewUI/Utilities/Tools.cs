@@ -10,6 +10,10 @@ namespace AirTicket.Utilities
 {
     class Tools
     {
+        public static MetroWindow loginWindow;
+        public static MetroWindow mainWindow;
+        public static string UserName;
+
         public static MetroWindow GetWindow()
         {
             return (MetroWindow)Application.Current.MainWindow;

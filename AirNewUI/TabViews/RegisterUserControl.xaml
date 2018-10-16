@@ -16,12 +16,12 @@
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1" Background="White" VerticalAlignment="Center">
+        <Grid x:Name="grid1" Grid.Column="1" Background="White" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
+            <StackPanel x:Name="stackp1" Grid.Column="0">
                 <TextBox Margin="20 30 10 10" Padding="5"
                          x:Name="email_txt"
                         HorizontalContentAlignment="Stretch"
@@ -30,8 +30,9 @@
                         Controls:TextBoxHelper.Watermark="Email As Account"
                         Controls:TextBoxHelper.WatermarkAlignment="Left"
                         FontSize="14" FontWeight="DemiBold"
-                        ToolTip="請輸入帳號"/>
+                        ToolTip="請輸入帳號" LostFocus="txt_LostFocus"/>
                 <TextBox x:Name="firstname_txt" Margin="20 10 10 10" Padding="5"
+                         LostFocus="txt_LostFocus"
                         HorizontalContentAlignment="Stretch"
                         Controls:TextBoxHelper.ClearTextButton="True"
                         Controls:TextBoxHelper.UseFloatingWatermark="True"
@@ -41,6 +42,7 @@
                         />
                 <ComboBox Margin="20 10 10 0" Padding="8"
                           x:Name="GenderCombo"
+                          LostFocus="cmb_LostFocus"
                           HorizontalContentAlignment="Stretch"
                           Controls:TextBoxHelper.UseFloatingWatermark="True"
                           Controls:TextBoxHelper.Watermark="Gender"
@@ -53,6 +55,7 @@
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <PasswordBox x:Name="password_txt" Margin="10 30 20 10" Padding="5 5 5 0"
+                             LostFocus="pwd_LostFocus"
                             Controls:TextBoxHelper.ClearTextButton="{Binding RelativeSource={RelativeSource Self}, Path=(Controls:TextBoxHelper.HasText), Mode=OneWay}"
                             Controls:TextBoxHelper.UseFloatingWatermark="True"
                             Controls:TextBoxHelper.Watermark="Password"
@@ -61,6 +64,7 @@
                          Style="{StaticResource MetroButtonRevealedPasswordBox}" 
                          ToolTip="請輸入密碼"/>
                 <TextBox x:Name="lastname_txt" Margin="10 10 20 10" Padding="5"
+                         LostFocus="txt_LostFocus"
                         HorizontalContentAlignment="Stretch"
                         Controls:TextBoxHelper.ClearTextButton="True"
                         Controls:TextBoxHelper.UseFloatingWatermark="True"
@@ -70,6 +74,7 @@
                         />
                 <TextBox Margin="10 10 20 10" Padding="5"
                         x:Name="phone_txt"
+                         LostFocus="txt_LostFocus"
                         PreviewTextInput="phone_txt_PreviewTextInput"
                         HorizontalContentAlignment="Stretch"
                         Controls:TextBoxHelper.ClearTextButton="True"
