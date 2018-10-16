@@ -1,4 +1,5 @@
 ﻿using AirTicket.TabViews;
+using AirTicket.Utilities;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -32,7 +33,7 @@ namespace AirTicket
                 ThemeManager.GetAccent("Steel"),
                 ThemeManager.GetAppTheme("BaseLight"));
 
-            txbLoginEntity.Text = LoginUserControl.UserName;
+            txbLoginEntity.Text = Tools.UserName;
             string appLocation = AppDomain.CurrentDomain.BaseDirectory;
             empPhotoIcon.Source = 
                 new BitmapImage(new Uri(appLocation.Replace(@"\bin\Debug\", @"\images\user0.png")));
@@ -66,10 +67,11 @@ namespace AirTicket
             txbLoginEntity.Text = "未登入";
             MessageBox.Show("確認登出");
 
-            LogInWindow mainWindow = new LogInWindow();
-            mainWindow.Show();
-            this.Hide();
-
+            //LogInWindow loginWindow = new LogInWindow();
+            //loginWindow.Show();
+            //this.Hide();
+            Tools.mainWindow.Hide();
+            Tools.loginWindow.Show();
         }
     }
 }

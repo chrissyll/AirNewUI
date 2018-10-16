@@ -70,51 +70,15 @@ namespace AirTicket.TabViews
             }
         }
 
-        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        private async void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (firstname_txt.Text == "")
-            {
-                firstname_txt.BorderBrush = Brushes.Red;
-            }
-            else
-            {
-                firstname_txt.BorderBrush = Brushes.LightGray;  //不是預設值
-            }
 
-            if (lastname_txt.Text == "")
+            if (firstname_txt.Text == "" || lastname_txt.Text == ""
+                || password_txt.Password == "" || phone_txt.Text == ""
+                || email_txt.Text == "" || GenderCombo.SelectedIndex==-1)
             {
-                lastname_txt.BorderBrush = Brushes.Red;
-            }
-            else
-            {
-                lastname_txt.BorderBrush = Brushes.LightGray;
-            }
-
-            if (password_txt.Password == "")
-            {
-                password_txt.BorderBrush = Brushes.Red;
-            }
-            else
-            {
-                password_txt.BorderBrush = Brushes.LightGray;
-            }
-
-            if (phone_txt.Text == "")
-            {
-                phone_txt.BorderBrush = Brushes.Red;
-            }
-            else
-            {
-                phone_txt.BorderBrush = Brushes.LightGray;
-            }
-
-            if (email_txt.Text == "")
-            {
-                email_txt.BorderBrush = Brushes.Red;
-            }
-            else
-            {
-                email_txt.BorderBrush = Brushes.LightGray;
+                MessageBox.Show("* 資料未填寫完成");
+                return;
             }
 
             string FirstName = this.firstname_txt.Text;
@@ -175,7 +139,7 @@ namespace AirTicket.TabViews
             //郵件標題編碼  
             msg.SubjectEncoding = System.Text.Encoding.UTF8;
             //郵件內容
-            msg.Body = "<p style=\"color:blue\">Welcome !!</p><p>Thanks for signing up with AirTicket!</p>";
+            msg.Body = "<p style=\"color:blue\">Welcome !!</p><p>Thanks for signing up with<strong> AirTicket!</strong></p>";
             msg.IsBodyHtml = true;
             msg.BodyEncoding = Encoding.UTF8;       //郵件內容編碼 
             msg.Priority = MailPriority.Normal;     //郵件優先級 
@@ -194,6 +158,10 @@ namespace AirTicket.TabViews
             MySmtp.Send(msg);
             //啟用 低安全性應用程式存取權https://myaccount.google.com/lesssecureapps
 
+            ProgressDialogController controller = await window.ShowProgressAsync("AirTicket Connection", "loading......");
+            controller.SetIndeterminate();
+            await Task.Delay(2000);
+            await controller.CloseAsync();
 
             dbContext.Members.Add(newMember);
             dbContext.SaveChanges();
@@ -210,6 +178,45 @@ namespace AirTicket.TabViews
             phone_txt.Text = "0989120120";
             email_txt.Text = "jackywu547@gmail.com";
 
+        }
+
+        private void txt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox box = (TextBox)sender;
+            if (box.Text == "" || box.Text == null)     //另一個方法string.IsNullOrWhiteSpace(box.Text)
+            {
+                box.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                box.BorderBrush = Brushes.LightGray;
+            }
+        }
+
+        private void cmb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            ComboBox box = (ComboBox)sender;
+            if (box.SelectedIndex == -1)
+            {
+                box.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                box.BorderBrush = Brushes.LightGray;
+            }
+        }
+
+        private void pwd_LostFocus(object sender, RoutedEventArgs e)
+        {
+            PasswordBox box = (PasswordBox)sender;
+            if (box.Password == "" || box.Password == null)
+            {
+                box.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                box.BorderBrush = Brushes.LightGray;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using AirTicket.Utilities;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,6 @@ namespace AirTicket.TabViews
     {
         MetroWindow window;
         AirEntities dbContext = new AirEntities();
-        public static string UserName = "";
 
         public LoginUserControl()
         {
@@ -70,11 +70,15 @@ namespace AirTicket.TabViews
             if (result != null)
             {
                 MessageBox.Show("登入成功");
-                LoginUserControl.UserName = email_txt.Text;
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                window.Hide();
-                Application.Current.MainWindow = mainWindow;
+                Tools.UserName = email_txt.Text;
+                Tools.mainWindow = new MainWindow();
+
+                Tools.mainWindow.Show();
+                Tools.loginWindow.Hide();
+                Application.Current.MainWindow = Tools.mainWindow;
+
+                email_txt.Clear();
+                password_txt.Clear();
             }
             else
             {
@@ -113,15 +117,15 @@ We recognize that in some countries, you might have legal rights as a consumer. 
 
         private void Demo1_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            window.Hide();
-            Application.Current.MainWindow = mainWindow;
+            Tools.mainWindow = new MainWindow();
+            Tools.mainWindow.Show();
+            Tools.loginWindow.Hide();
+            Application.Current.MainWindow = Tools.mainWindow;
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            email_txt.Text = "547@gmail.com";
+            email_txt.Text = "jackywu547@gmail.com";
             password_txt.Password = "547";
         }
     }
