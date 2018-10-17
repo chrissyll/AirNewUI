@@ -23,23 +23,35 @@
         <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="114.4,24,0,0" Height="27"/>
         <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="374.4,24,0,0" Height="27"/>
         <Button Content="登出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="492.4,24,0,0" Height="27"/>
-        <Expander Header="訂單管理" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Grid.Column="1" Margin="243.4,22,0,0" Grid.RowSpan="2">
-            <Grid Background="#FFE5E5E5"/>
+        <Expander Header="訂單管理" Grid.Column="1" Grid.Row="1" IsExpanded="True">
+            <Grid Background="#FFE5E5E5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180*"/>
+                    <ColumnDefinition Width="450*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox x:Name="listbox1" HorizontalAlignment="Left"  Margin="7,2,0,0" VerticalAlignment="Top"  Background="#FFE5E5E5">
+                    <ListBoxItem x:Name="listboxflight" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxdeparture_airport_name" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxtime1" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxduration" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxarrival_airport_name" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxtime2" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxcabin" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxnum" FontSize="14" Background="#FFE5E5E5"/>
+                    <ListBoxItem x:Name="listboxprice" FontSize="14" Background="#FFE5E5E5"/>
+                </ListBox>
+                <Grid Grid.Column="1" Height="374">
+                    <ScrollViewer   >
+                       <StackPanel x:Name="stackpanel1" />
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
         </Expander>
-        <ListBox Name="listbox1" Grid.Column="1" HorizontalAlignment="Left" Height="339" Margin="7.4,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="263">
-            <ListBoxItem Name="listboxflight" FontSize="14"/>
-            <ListBoxItem Name="listboxdeparture_airport_name" FontSize="14"/>
-            <ListBoxItem Name="listboxtime1" FontSize="14"/>
-            <ListBoxItem Name="listboxduration" FontSize="14"/>
-            <ListBoxItem Name="listboxarrival_airport_name" FontSize="14"/>
-            <ListBoxItem Name="listboxtime2" FontSize="14"/>
-            <ListBoxItem Name="listboxcabin" FontSize="14"/>
-            <ListBoxItem Name="listboxnum" FontSize="14"/>
-            <ListBoxItem Name="listboxprice" FontSize="14"/>
-        </ListBox>
-        <ScrollViewer Grid.Column="1"   Margin="275.4,10,0,-0.4" Grid.Row="1" Background="White"  >
-            <StackPanel x:Name="stackpanel1" />
-        </ScrollViewer>
+
+        <!--<ScrollViewer Grid.Column="1"   Margin="275.4,10,0,-0.4" Grid.Row="1" Background="White"  >-->
+
+
+        <!--</ScrollViewer>-->
         <Button Content="確認" HorizontalAlignment="Left" Margin="45,48,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="27"/>
     </Grid>
 </UserControl>

@@ -44,11 +44,14 @@ namespace AirTicket
        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
+
+            
             //從 stackpanel1.Children去搜尋使用者控制項個數
-            for (int i = 0; i < stackpanel1.Children.Count; i++)
+            for (int i = 1; i < stackpanel1.Children.Count; i++)
             {
                 //從 stackpanel1.Children去搜尋使用者控制項個數
-                UserControlPassenger ucp = (UserControlPassenger) stackpanel1.Children[i];
+                UserControlPassenger ucp = (UserControlPassenger)stackpanel1.Children[i];
                 psg.Add(ucp);
             }
 

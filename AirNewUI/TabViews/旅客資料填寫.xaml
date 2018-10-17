@@ -8,8 +8,8 @@
         d:DesignHeight="450" d:DesignWidth="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="374*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="../images/602.jpg"/>
@@ -18,16 +18,25 @@
             <ColumnDefinition Width="161*"/>
             <ColumnDefinition Width="633*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="旅客資料填寫" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,24,0,0"/>
-        <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="116.2,24,0,0"/>
-        <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="376.2,24,0,0"/>
-        <Button Content="登出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="494.2,24,0,0"/>
-        <Expander Header="訂單管理" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Grid.Column="1" Margin="245.2,22,0,0" Grid.RowSpan="2">
-            <Grid Background="#FFE5E5E5"/>
+        <Label Content="旅客資料填寫" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,24,0,0" Height="26" Width="82"/>
+        <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="116.6,24,0,0" Height="27"/>
+        <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="376.6,24,0,0" Height="27"/>
+        <Button Content="登出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="494.6,24,0,0" Height="27"/>
+        <Button Content="下一步" HorizontalAlignment="Left" Margin="38,123.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="27"/>
+        <Expander Header="乘客資料填寫" IsExpanded="True" Grid.ColumnSpan="2" Margin="162,75,0,-0.4" Grid.RowSpan="2" Height="374">
+
+
+            <ScrollViewer>
+                <StackPanel x:Name="stackpanel1" Orientation="Vertical"  Background="#FFE5E5E5" >
+                    <Grid Background="#FFE5E5E5" Margin="0,0,0.2,0"/>
+                </StackPanel>
+
+
+
+            </ScrollViewer>
+
+
+
         </Expander>
-        <ScrollViewer Grid.Column="1" Grid.Row="1">
-            <StackPanel x:Name="stackpanel1" Orientation="Vertical" HorizontalAlignment="Left" Margin="10" />
-        </ScrollViewer>
-        <Button Content="下一步" HorizontalAlignment="Left" Margin="38,124,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </UserControl>
