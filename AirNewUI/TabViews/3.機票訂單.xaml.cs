@@ -105,8 +105,18 @@ namespace AirTicket
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+
            
-            //todo 刪除訂單
+
+            int ticket_id = Int32.Parse(OrderID_txt.Text);
+            var res = DbContext.Orders.First(o => o.Ticket_ID ==ticket_id);
+            var res1 = DbContext.Passengers.First(o => o.Ticket_ID == ticket_id);
+            DbContext.Orders.Remove(res);
+            DbContext.Passengers.Remove(res1);
+            
+            DbContext.SaveChanges();
+            MessageBox.Show("刪除成功");
+
             //var result = from o in this.DbContext.Orders
             //             join a in this.DbContext.Airlines on o.Airline_ID equals a.Airline_ID
             //             join f in this.DbContext.Flights on o.Flight_ID equals f.Flight_ID
@@ -124,8 +134,8 @@ namespace AirTicket
             //{
 
             //  DataGrid1.Items.Remove(DataGrid1.SelectedItem);
-               
-                
+
+
 
 
             //}
