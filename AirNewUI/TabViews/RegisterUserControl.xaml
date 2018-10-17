@@ -32,7 +32,7 @@
                         FontSize="14" FontWeight="DemiBold"
                         ToolTip="請輸入帳號" LostFocus="txt_LostFocus"/>
                 <TextBox x:Name="firstname_txt" Margin="20 10 10 10" Padding="5"
-                         LostFocus="txt_LostFocus"
+                         LostFocus="txt_LostFocus" ToolTip="請輸入姓氏"
                         HorizontalContentAlignment="Stretch"
                         Controls:TextBoxHelper.ClearTextButton="True"
                         Controls:TextBoxHelper.UseFloatingWatermark="True"
@@ -41,7 +41,7 @@
                         FontSize="14" FontWeight="DemiBold"
                         />
                 <ComboBox Margin="20 10 10 0" Padding="8"
-                          x:Name="GenderCombo"
+                          x:Name="GenderCombo" ToolTip="請選擇性別"
                           LostFocus="cmb_LostFocus"
                           HorizontalContentAlignment="Stretch"
                           Controls:TextBoxHelper.UseFloatingWatermark="True"
@@ -55,7 +55,7 @@
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <PasswordBox x:Name="password_txt" Margin="10 30 20 10" Padding="5 5 5 0"
-                             LostFocus="pwd_LostFocus"
+                             LostFocus="pwd_LostFocus" 
                             Controls:TextBoxHelper.ClearTextButton="{Binding RelativeSource={RelativeSource Self}, Path=(Controls:TextBoxHelper.HasText), Mode=OneWay}"
                             Controls:TextBoxHelper.UseFloatingWatermark="True"
                             Controls:TextBoxHelper.Watermark="Password"
@@ -64,7 +64,7 @@
                          Style="{StaticResource MetroButtonRevealedPasswordBox}" 
                          ToolTip="請輸入密碼"/>
                 <TextBox x:Name="lastname_txt" Margin="10 10 20 10" Padding="5"
-                         LostFocus="txt_LostFocus"
+                         LostFocus="txt_LostFocus" ToolTip="請輸入名字"
                         HorizontalContentAlignment="Stretch"
                         Controls:TextBoxHelper.ClearTextButton="True"
                         Controls:TextBoxHelper.UseFloatingWatermark="True"
@@ -73,7 +73,7 @@
                         FontSize="14" FontWeight="DemiBold"
                         />
                 <TextBox Margin="10 10 20 10" Padding="5"
-                        x:Name="phone_txt"
+                        x:Name="phone_txt" ToolTip="請輸入電話"
                          LostFocus="txt_LostFocus"
                         PreviewTextInput="phone_txt_PreviewTextInput"
                         HorizontalContentAlignment="Stretch"

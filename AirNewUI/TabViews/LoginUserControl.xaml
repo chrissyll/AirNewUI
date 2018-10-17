@@ -34,7 +34,7 @@
                             Controls:TextBoxHelper.WatermarkAlignment="Right"
                          FontSize="14" FontWeight="DemiBold"
                          Style="{StaticResource MetroButtonRevealedPasswordBox}" 
-                         ToolTip="請輸入帳號"/>
+                         ToolTip="請輸入密碼"/>
             <Label Margin="0 10 0 0" Name="ErrorMessage" HorizontalAlignment="Center" Content="" FontSize="13" FontFamily="Calibri" Foreground="Red" ></Label>
             <Button Name="LoginButton" Margin="20 10 20 0" Style="{StaticResource AccentedSquareButtonStyle}" Click="LoginButton_Click">
                 <StackPanel Orientation="Horizontal">
