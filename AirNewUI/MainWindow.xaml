@@ -239,13 +239,19 @@
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
 
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Car}" Label="Private">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Car}" Label="租車">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <TabViews:LoginUserControl />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
 
-                        <Controls:HamburgerMenuIconItem  Icon="{iconPacks:Material Kind=City}" Label="Briefcase">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=CalendarMultiple}" Label="行程表">
+                            <Controls:HamburgerMenuIconItem.Tag>
+                                <TabViews:LoginUserControl />
+                            </Controls:HamburgerMenuIconItem.Tag>
+                        </Controls:HamburgerMenuIconItem>
+
+                        <Controls:HamburgerMenuIconItem  Icon="{iconPacks:Material Kind=Sass}" Label="Briefcase">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <UserControl>
                                     <StackPanel Orientation="Vertical">

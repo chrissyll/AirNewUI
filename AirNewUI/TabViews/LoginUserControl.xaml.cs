@@ -115,13 +115,13 @@ We recognize that in some countries, you might have legal rights as a consumer. 
             }
         }
 
-        private void Demo1_Click(object sender, RoutedEventArgs e)
-        {
-            Tools.mainWindow = new MainWindow();
-            Tools.mainWindow.Show();
-            Tools.loginWindow.Hide();
-            Application.Current.MainWindow = Tools.mainWindow;
-        }
+        //private void Demo1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tools.mainWindow = new MainWindow();
+        //    Tools.mainWindow.Show();
+        //    Tools.loginWindow.Hide();
+        //    Application.Current.MainWindow = Tools.mainWindow;
+        //}
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {

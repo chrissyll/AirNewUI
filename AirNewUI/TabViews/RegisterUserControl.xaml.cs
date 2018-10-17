@@ -131,25 +131,12 @@ namespace AirTicket.TabViews
             }
 
             Random r = new Random();
-            int passcode = 1234;
-            //passcode = r.Next(1000, 9999);
-            //var sendResult = await Tools.SendSMS(Phone, passcode.ToString());     //寄手機簡訊
+            //int passcode = 1234;
+            int passcode = r.Next(1000, 9999);
+            var sendResult = await Tools.SendSMS(Phone, passcode.ToString());     //寄手機簡訊
 
             string result = "";
-            //int firstTime = 0;
             bool IsFirstTime = true;
-            //while (passcode.ToString() != result)
-            //{
-            //    if (firstTime == 0)
-            //    {
-            //        result = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
-            //    }
-            //    else
-            //    {
-            //        result = await Tools.loginWindow.ShowInputAsync("驗證碼錯誤!", "請重新輸入: ");
-            //    }
-            //    firstTime++;
-            //}
             while (passcode.ToString() != result)
             {
                 if (IsFirstTime)
@@ -162,27 +149,6 @@ namespace AirTicket.TabViews
                 }
                 IsFirstTime = false;
             }
-
-            //var result = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
-            //if (result == null)
-            //{
-            //    return;
-            //}
-            //if (passcode.ToString() != result)
-            //{
-            //    var result2 = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
-            //    if (result2 == null)
-            //    {
-            //        return;
-            //    }
-            //    if (passcode.ToString() != result2)
-            //    {
-            //        var result2 = await Tools.loginWindow.ShowInputAsync("已傳送4位數驗證碼!", "請輸入: ");
-            //        if (result2 == null)
-            //        {
-            //            return;
-            //        }
-            //    }
 
             ProgressDialogController controller = await Tools.loginWindow.ShowProgressAsync("AirTicket Connection", "loading......");
             controller.SetIndeterminate();

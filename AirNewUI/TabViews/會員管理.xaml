@@ -21,7 +21,6 @@
         <TextBox x:Name="email_txt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Margin="22,38.556,0,0" Grid.Row="1"/>
         <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="136,74.556,0,0" Grid.Row="1" Click="Button_Click"/>
         <Button Content="會員管理" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="53.333,24,0,0" Click="Button_Click_3" Grid.Column="1"/>
-        <Button Content="報表分析" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="313.333,24,0,0" Grid.Column="1"/>
         <Expander Header="訂單管理" Grid.Column="1" Margin="0,64,22.444,19.778" Grid.RowSpan="2" IsExpanded="True">
             <DataGrid x:Name="datagrid1"/>
         </Expander>

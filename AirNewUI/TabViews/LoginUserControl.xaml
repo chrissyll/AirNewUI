@@ -63,7 +63,6 @@
                 </Button.Triggers>
             </Button>-->
         </StackPanel>
-        <Button Name="Demo1" Click="Demo1_Click" Content="Main" Grid.Column="2" HorizontalAlignment="Left" Margin="66.111,47,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.067,0.101"/>
         <Button Content="" Style="{DynamicResource MetroCircleButtonStyle}" HorizontalAlignment="Left" Margin="276.4,77,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="Button_Click_5" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="/AirTicket;component/images/user.png"/>
